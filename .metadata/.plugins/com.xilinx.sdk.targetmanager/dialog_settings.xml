@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="mnist_cnn_system-bitFile" value="C:\MNIST_Project\zynq_platform\hw\system_wrapper.bit"/>
+	<item key="mnist_cnn_system-bmmFile" value=""/>
+	<item key="mnist_cnn_system-target" value="Local"/>
+	<item key="mnist_cnn_system-device" value="Digilent Zed 210248650087/3-xc7z020"/>
+	<item key="mnist_cnn_system-partial_bit" value="false"/>
+	<item key="mnist_cnn_system-skip_rev_check" value="false"/>
+	<item key="programfpga.sdxproject" value="mnist_cnn_system"/>
+	<item key="devices_info_Local" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zed 210248650087&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zed-210248650087-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zed-210248650087-23727093-0&quot;}}]}"/>
+</section>

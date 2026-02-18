@@ -1,0 +1,29 @@
+15:41:25 **** Incremental Build of configuration Debug for project cnn_fpga_test_v2 ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/main.cpp'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/MNIST_Project/zedboard_fpga_platform_v2/export/zedboard_fpga_platform_v2/sw/zedboard_fpga_platform_v2/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+In file included from ../src/main.cpp:10:
+C:/MNIST_Project/zedboard_fpga_platform_v2/export/zedboard_fpga_platform_v2/sw/zedboard_fpga_platform_v2/standalone_domain/bspinclude/include/xtime_l.h:65:70: note: #pragma message: For the sleep routines, Global timer is being used
+   65 | #pragma message ("For the sleep routines, Global timer is being used")
+      |                                                                      ^
+'Finished building: ../src/main.cpp'
+' '
+'Building target: cnn_fpga_test_v2.elf'
+'Invoking: ARM v7 g++ linker'
+arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/MNIST_Project/zedboard_fpga_platform_v2/export/zedboard_fpga_platform_v2/sw/zedboard_fpga_platform_v2/standalone_domain/bsplib/lib -o "cnn_fpga_test_v2.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: cnn_fpga_test_v2.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size cnn_fpga_test_v2.elf  |tee "cnn_fpga_test_v2.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  36948	  26352	  25808	  89108	  15c14	cnn_fpga_test_v2.elf
+'Finished building: cnn_fpga_test_v2.elf.size'
+' '
+
+15:41:26 Build Finished (took 1s.212ms)
+

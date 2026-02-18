@@ -1,0 +1,10 @@
+11:22:11 **** Incremental Build of configuration Debug for project mnist_cnn_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 55664 C:/MNIST_Project/zynq_platform/export/zynq_platform/zynq_platform.xpfm standalone_domain C:/MNIST_Project/mnist_cnn_system/Debug/system.bif
+sdcard_gen --xpfm C:/MNIST_Project/zynq_platform/export/zynq_platform/zynq_platform.xpfm --sys_config zynq_platform --bif C:/MNIST_Project/mnist_cnn_system/Debug/system.bif --bitstream C:/MNIST_Project/mnist_cnn/_ide/bitstream/system_wrapper.bit --elf C:/MNIST_Project/mnist_cnn/Debug/mnist_cnn.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/MNIST_Project/mnist_cnn/_ide/bitstream/system_wrapper.bit
+Running C:/Xilinx/Vitis/2020.2/bin/bootgen  -image C:/MNIST_Project/mnist_cnn_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+11:22:17 Build Finished (took 6s.709ms)
+

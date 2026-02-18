@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="cnn_fpga_test_v" location="C:/MNIST_Project/cnn_fpga_test_v" platform="C:/MNIST_Project/zedboard_fpga_platform_v2/export/zedboard_fpga_platform_v2/zedboard_fpga_platform_v2.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="cnn_fpga_test_v_system" sysConfig="zedboard_fpga_platform_v2" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" language="CPP" mssSignature="2e1b0aed3f504ae20be4bdd2852ce3f4">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1267640335" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.10220566" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

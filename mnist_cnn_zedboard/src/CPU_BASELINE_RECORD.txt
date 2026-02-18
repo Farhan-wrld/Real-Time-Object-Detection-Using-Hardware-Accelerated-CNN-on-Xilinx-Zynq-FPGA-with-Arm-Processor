@@ -1,0 +1,78 @@
+================================================================================
+CPU BASELINE PERFORMANCE RECORD - OFFICIAL REFERENCE
+================================================================================
+
+Date: January 28, 2026
+Frozen By: Person A
+Status: LOCKED - DO NOT MODIFY
+
+PERFORMANCE METRICS:
+--------------------
+✅ Prediction: 7
+✅ Actual Label: 7
+✅ Status: CORRECT
+✅ Average Inference Time: 30.26 ms
+✅ Throughput: ~33 FPS
+✅ Runs Tested: 10
+
+DETAILED TIMING BREAKDOWN:
+--------------------------
+Run 1:  30.275 ms
+Run 2:  30.362 ms
+Run 3:  30.249 ms
+Run 4:  30.249 ms
+Run 5:  30.249 ms
+Run 6:  30.249 ms
+Run 7:  30.249 ms
+Run 8:  30.249 ms
+Run 9:  30.249 ms
+Run 10: 30.249 ms
+
+ARCHITECTURE (VERIFIED):
+------------------------
+Input:  1×28×28 (normalized MNIST)
+Conv1:  8 filters, 3×3, stride 1 → Output: 8×26×26
+ReLU:   Applied to Conv1 output
+Pool1:  MaxPool 2×2, stride 2 → Output: 8×13×13
+Conv2:  16 filters, 3×3, stride 1 → Output: 16×11×11
+ReLU:   Applied to Conv2 output
+Pool2:  MaxPool 2×2, stride 2 → Output: 16×5×5
+Flatten: 16×5×5 = 400 features
+FC:     400 → 10 classes
+
+OUTPUT SCORES (REFERENCE):
+--------------------------
+Class 0: -4.716
+Class 1: -6.920
+Class 2:  1.416
+Class 3:  0.899
+Class 4: -12.468
+Class 5: -8.900
+Class 6: -21.813
+Class 7:  13.353  ← WINNER
+Class 8: -4.345
+Class 9: -1.484
+
+FPGA COMPARISON REQUIREMENTS:
+------------------------------
+1. FPGA prediction MUST equal 7
+2. FPGA output scores MUST match within ±0.1% tolerance
+3. FPGA must be faster than 30.26 ms for speedup claim
+4. All 10 test images must produce identical results
+
+REFERENCE FILES:
+----------------
+- cnn_cpu_ref.cpp (frozen source code)
+- conv1_weights.h (8 filters)
+- conv2_weights.h (16 filters)
+- fc_weights.h (10 outputs)
+- test_image.h (MNIST digit 7)
+
+CONTACT:
+--------
+For questions about CPU baseline, contact Person A
+For FPGA integration, wait for Person C's hardware package
+
+================================================================================
+END OF BASELINE RECORD
+================================================================================

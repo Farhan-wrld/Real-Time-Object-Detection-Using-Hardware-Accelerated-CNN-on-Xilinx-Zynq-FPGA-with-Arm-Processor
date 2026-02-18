@@ -1,0 +1,10 @@
+12:14:10 **** Incremental Build of configuration Debug for project conv2d_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 60667 C:/MNIST_Project/conv2dtest/export/conv2dtest/conv2dtest.xpfm standalone_domain C:/MNIST_Project/conv2d_system/Debug/system.bif
+sdcard_gen --xpfm C:/MNIST_Project/conv2dtest/export/conv2dtest/conv2dtest.xpfm --sys_config conv2dtest --bif C:/MNIST_Project/conv2d_system/Debug/system.bif --bitstream C:/MNIST_Project/conv2d/_ide/bitstream/system_wrapper.bit --elf C:/MNIST_Project/conv2d/Debug/conv2d.elf,ps7_cortexa9_0
+creating BOOT.BIN using C:/MNIST_Project/conv2d/_ide/bitstream/system_wrapper.bit
+Running C:/Xilinx/Vitis/2020.2/bin/bootgen  -image C:/MNIST_Project/conv2d_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+12:14:17 Build Finished (took 7s.94ms)
+

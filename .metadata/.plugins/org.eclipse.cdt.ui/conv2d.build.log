@@ -1,0 +1,25 @@
+12:14:09 **** Incremental Build of configuration Debug for project conv2d ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/MNIST_Project/conv2dtest/export/conv2dtest/sw/conv2dtest/standalone_domain/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: conv2d.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/MNIST_Project/conv2dtest/export/conv2dtest/sw/conv2dtest/standalone_domain/bsplib/lib -o "conv2d.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: conv2d.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size conv2d.elf  |tee "conv2d.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25072	   1168	  22584	  48824	   beb8	conv2d.elf
+'Finished building: conv2d.elf.size'
+' '
+
+12:14:10 Build Finished (took 1s.94ms)
+

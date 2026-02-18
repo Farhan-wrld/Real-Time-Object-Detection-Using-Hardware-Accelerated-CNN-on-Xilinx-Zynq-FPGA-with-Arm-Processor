@@ -1,0 +1,90 @@
+================================================================================
+FPGA INTEGRATION CHECKLIST - PERSON A
+================================================================================
+
+STATUS: ⏸️ WAITING FOR PERSON C
+
+PREREQUISITES (Person C must provide):
+---------------------------------------
+[ ] New system.xsa file with FPGA accelerators integrated
+[ ] Memory map document with addresses:
+    [ ] DMA controller base address
+    [ ] FPGA accelerator base address
+    [ ] DDR input buffer address
+    [ ] DDR output buffer address
+    [ ] Control/status register offsets
+[ ] DMA configuration guide
+[ ] Accelerator control sequence documentation
+[ ] Expected data formats and alignment requirements
+
+INTEGRATION STEPS (Do after receiving above):
+----------------------------------------------
+[ ] Step 1: Import new system.xsa
+    - Create new platform project from Person C's XSA
+    - Rebuild BSP
+    - Verify new peripherals appear in Address Editor
+
+[ ] Step 2: Update fpga_controller.cpp with real addresses
+    - Replace PLACEHOLDER defines with actual addresses
+    - Fill in DMA initialization code
+    - Implement start/stop accelerator functions
+
+[ ] Step 3: Add DMA driver
+    - Include xaxidma.h
+    - Add DMA initialization
+    - Implement transfer functions
+
+[ ] Step 4: Build and test hardware connection
+    - Build project
+    - Program FPGA
+    - Verify DMA transfers work (loopback test)
+
+[ ] Step 5: Run first FPGA inference
+    - Load one test image
+    - Execute FPGA path
+    - Check if output is received (even if wrong)
+
+[ ] Step 6: Debug and validate
+    - Compare FPGA output vs CPU output
+    - Debug any mismatches with Person B
+    - Iterate until prediction matches
+
+[ ] Step 7: Performance measurement
+    - Run 10+ inferences
+    - Calculate average time
+    - Compute speedup vs CPU baseline
+
+[ ] Step 8: Final validation
+    - Test with multiple images
+    - Document all results
+    - Create comparison table
+
+CURRENT BLOCKERS:
+-----------------
+❌ Waiting for Person C to deliver hardware package
+❌ Cannot proceed with DMA implementation
+❌ Cannot test FPGA path
+
+READY COMPONENTS:
+-----------------
+✅ CPU baseline frozen (30.26 ms)
+✅ Validation functions written
+✅ Comparison framework ready
+✅ Timing measurement code ready
+✅ Test harness prepared
+
+ESTIMATED TIME AFTER PERSON C DELIVERS:
+----------------------------------------
+- Integration: 2-3 hours
+- First working test: 1-2 hours
+- Debugging: 2-4 hours (depends on issues)
+- Performance testing: 1 hour
+Total: 6-10 hours
+
+CONTACT:
+--------
+Person A: Integration and validation owner
+Person B: Consult if FPGA output doesn't match CPU
+Person C: Hardware platform provider (BLOCKING)
+
+================================================================================

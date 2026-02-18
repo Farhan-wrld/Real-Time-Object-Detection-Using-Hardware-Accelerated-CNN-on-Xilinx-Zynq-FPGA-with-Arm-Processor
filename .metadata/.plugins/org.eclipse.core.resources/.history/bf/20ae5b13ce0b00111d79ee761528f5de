@@ -1,0 +1,560 @@
+/******************************************************************************
+ * FPGA CNN ACCELERATOR - CONV1 ONLY + CPU COMPLETION
+ * Strategy: FPGA accelerates Conv1, CPU does remaining layers
+ ******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+#include "xparameters.h"
+#include "xil_printf.h"
+#include "xil_io.h"
+#include "xil_cache.h"
+#include "xtime_l.h"
+#include "xuartps.h"
+
+#include "conv1_weights.h"
+#include "conv2_weights.h"
+#include "fc_weights.h"
+#include "test_image.h"
+
+// ============================================================================
+// HARDWARE CONFIGURATION
+// ============================================================================
+
+#define CNN_ACCEL_BASE_ADDR   0x40000000
+
+#define ACCEL_AP_CTRL         0x00
+#define ACCEL_INPUT_ADDR      0x10
+#define ACCEL_WEIGHTS_ADDR    0x1C
+#define ACCEL_BIAS_ADDR       0x28
+#define ACCEL_OUTPUT_ADDR     0x34
+
+#define AP_START              0x01
+#define AP_DONE               0x02
+#define AP_IDLE               0x04
+#define AP_READY              0x08
+
+// DDR Memory
+#define DDR_BASE_ADDR        0x00100000
+#define DDR_INPUT_BUFFER     (DDR_BASE_ADDR + 0x00100000)
+#define DDR_WEIGHTS_BUFFER   (DDR_BASE_ADDR + 0x00200000)
+#define DDR_BIAS_BUFFER      (DDR_BASE_ADDR + 0x00600000)
+#define DDR_OUTPUT_BUFFER    (DDR_BASE_ADDR + 0x00700000)
+
+// Add after your existing #defines
+
+// UART Configuration
+#define UART_DEVICE_ID      XPAR_XUARTPS_0_DEVICE_ID
+#define UART_BAUD_RATE      115200
+
+// Protocol
+#define START_MARKER        0xAA
+#define END_MARKER          0x55
+
+static XUartPs UartInstance;
+
+// ============================================================================
+// BUFFERS
+// ============================================================================
+
+static float fpga_input[28*28] __attribute__((aligned(32)));
+
+// CRITICAL: Output is 8×26×26 (Conv1 output), NOT 10 values!
+static float fpga_conv1_output[8][26][26] __attribute__((aligned(32)));
+
+// CPU buffers for remaining layers
+static float pool1_output[8][13][13];
+static float conv2_output[16][11][11];
+static float pool2_output[16][5][5];
+static float fc_input[400];
+static float fc_output[10];
+
+// ============================================================================
+// REGISTER ACCESS
+// ============================================================================
+
+static inline void accel_write(u32 offset, u32 value)
+{
+    Xil_Out32(CNN_ACCEL_BASE_ADDR + offset, value);
+}
+
+static inline u32 accel_read(u32 offset)
+{
+    return Xil_In32(CNN_ACCEL_BASE_ADDR + offset);
+}
+
+void accel_write_addr(u32 offset, u64 addr)
+{
+    accel_write(offset,     (u32)(addr));
+    accel_write(offset + 4, (u32)(addr >> 32));
+}
+
+// ============================================================================
+// ACCELERATOR CONTROL
+// ============================================================================
+
+void reset_accelerator()
+{
+    xil_printf("[ACCEL] Resetting...\r\n");
+    accel_write(ACCEL_AP_CTRL, 0x00);
+}
+
+void start_accelerator()
+{
+    xil_printf("[ACCEL] Starting Conv1...\r\n");
+    accel_write(ACCEL_AP_CTRL, AP_START);
+}
+
+void wait_for_done()
+{
+    xil_printf("[ACCEL] Waiting...\r\n");
+    while(!(accel_read(ACCEL_AP_CTRL) & AP_DONE));
+    xil_printf("[ACCEL] Conv1 done.\r\n");
+}
+
+// ============================================================================
+// CPU LAYER IMPLEMENTATIONS
+// ============================================================================
+
+void relu_cpu(float data[][26][26], int channels)
+{
+    for (int c = 0; c < channels; c++) {
+        for (int i = 0; i < 26; i++) {
+            for (int j = 0; j < 26; j++) {
+                if (data[c][i][j] < 0) {
+                    data[c][i][j] = 0;
+                }
+            }
+        }
+    }
+}
+
+void maxpool_cpu(float input[8][26][26], float output[8][13][13])
+{
+    xil_printf("[CPU] MaxPool 2x2...\r\n");
+
+    for (int c = 0; c < 8; c++) {
+        for (int i = 0; i < 13; i++) {
+            for (int j = 0; j < 13; j++) {
+                float max_val = input[c][i*2][j*2];
+                max_val = fmax(max_val, input[c][i*2][j*2+1]);
+                max_val = fmax(max_val, input[c][i*2+1][j*2]);
+                max_val = fmax(max_val, input[c][i*2+1][j*2+1]);
+                output[c][i][j] = max_val;
+            }
+        }
+    }
+}
+
+void conv2_cpu(float input[8][13][13], float output[16][11][11])
+{
+    xil_printf("[CPU] Conv2 (16 filters, 3x3)...\r\n");
+
+    for (int oc = 0; oc < 16; oc++) {
+        for (int i = 0; i < 11; i++) {
+            for (int j = 0; j < 11; j++) {
+                float sum = conv2_b[oc];
+                for (int ic = 0; ic < 8; ic++) {
+                    for (int ki = 0; ki < 3; ki++) {
+                        for (int kj = 0; kj < 3; kj++) {
+                            sum += input[ic][i+ki][j+kj] * conv2_w[oc][ic][ki][kj];
+                        }
+                    }
+                }
+                output[oc][i][j] = sum;
+            }
+        }
+    }
+}
+
+void relu_cpu_16(float data[][11][11])
+{
+    for (int c = 0; c < 16; c++) {
+        for (int i = 0; i < 11; i++) {
+            for (int j = 0; j < 11; j++) {
+                if (data[c][i][j] < 0) {
+                    data[c][i][j] = 0;
+                }
+            }
+        }
+    }
+}
+
+void maxpool_cpu_16(float input[16][11][11], float output[16][5][5])
+{
+    xil_printf("[CPU] MaxPool 2x2 (layer 2)...\r\n");
+
+    for (int c = 0; c < 16; c++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                float max_val = input[c][i*2][j*2];
+                max_val = fmax(max_val, input[c][i*2][j*2+1]);
+                max_val = fmax(max_val, input[c][i*2+1][j*2]);
+                max_val = fmax(max_val, input[c][i*2+1][j*2+1]);
+                output[c][i][j] = max_val;
+            }
+        }
+    }
+}
+
+void flatten_cpu(float input[16][5][5], float output[400])
+{
+    int idx = 0;
+    for (int c = 0; c < 16; c++) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                output[idx++] = input[c][i][j];
+            }
+        }
+    }
+}
+
+void fc_cpu(float input[400], float output[10])
+{
+    xil_printf("[CPU] Fully Connected (400->10)...\r\n");
+
+    for (int i = 0; i < 10; i++) {
+        float sum = fc_b[i];
+        for (int j = 0; j < 400; j++) {
+            sum += input[j] * fc_w[i][j];
+        }
+        output[i] = sum;
+    }
+}
+
+// ============================================================================
+// FPGA CONV1 EXECUTION
+// ============================================================================
+
+double run_fpga_conv1(float input_image[28][28])
+{
+    XTime tStart, tEnd;
+
+    xil_printf("\r\n========================================\r\n");
+    xil_printf("FPGA CONV1 EXECUTION\r\n");
+    xil_printf("========================================\r\n");
+
+    // Prepare input
+    for(int i=0; i<28; i++)
+        for(int j=0; j<28; j++)
+            fpga_input[i*28+j] = input_image[i][j];
+
+    memcpy((void*)DDR_INPUT_BUFFER, fpga_input, sizeof(fpga_input));
+    Xil_DCacheFlushRange(DDR_INPUT_BUFFER, sizeof(fpga_input));
+
+    // Configure accelerator
+    accel_write_addr(ACCEL_INPUT_ADDR, DDR_INPUT_BUFFER);
+    accel_write_addr(ACCEL_WEIGHTS_ADDR, DDR_WEIGHTS_BUFFER);
+    accel_write_addr(ACCEL_BIAS_ADDR, DDR_BIAS_BUFFER);
+    accel_write_addr(ACCEL_OUTPUT_ADDR, DDR_OUTPUT_BUFFER);
+
+    xil_printf("Input:   0x%08X\r\n", DDR_INPUT_BUFFER);
+    xil_printf("Output:  0x%08X\r\n", DDR_OUTPUT_BUFFER);
+
+    // Execute
+    XTime_GetTime(&tStart);
+    start_accelerator();
+    wait_for_done();
+    XTime_GetTime(&tEnd);
+
+    // Read output - CRITICAL: Read 8×26×26, not 10 values!
+    u32 output_size = 8 * 26 * 26 * sizeof(float);  // 21,632 bytes
+    Xil_DCacheInvalidateRange(DDR_OUTPUT_BUFFER, output_size);
+
+    memcpy(fpga_conv1_output, (void*)DDR_OUTPUT_BUFFER, output_size);
+
+    double time_ms = 1000.0 * (double)(tEnd - tStart) /
+                     (double)XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ;
+
+    xil_printf("[FPGA] Conv1 time: %d.%03d ms\r\n",
+               (int)time_ms,
+               (int)((time_ms-(int)time_ms)*1000));
+
+    // Debug: Check first few values
+    xil_printf("[DEBUG] Conv1 output sample [0][0][0:4]: ");
+    for (int i = 0; i < 5; i++) {
+        int whole = (int)fpga_conv1_output[0][0][i];
+        int frac = abs((int)((fpga_conv1_output[0][0][i] - whole) * 1000));
+        if (fpga_conv1_output[0][0][i] < 0) xil_printf("-");
+        xil_printf("%d.%03d ", abs(whole), frac);
+    }
+    xil_printf("\r\n");
+
+    return time_ms;
+}
+
+// ============================================================================
+// COMPLETE INFERENCE (FPGA + CPU)
+// ============================================================================
+
+double run_hybrid_inference(float input_image[28][28], float *output_scores)
+{
+    XTime tStart, tEnd;
+    XTime_GetTime(&tStart);
+
+    xil_printf("\r\n========================================\r\n");
+    xil_printf("HYBRID INFERENCE (FPGA + CPU)\r\n");
+    xil_printf("========================================\r\n");
+
+    // Step 1: FPGA Conv1
+    double fpga_time = run_fpga_conv1(input_image);
+
+    // Step 2: CPU ReLU (if not in FPGA)
+    // Uncomment if Person B's accelerator doesn't include ReLU
+    // relu_cpu(fpga_conv1_output, 8);
+
+    // Step 3: CPU MaxPool
+    maxpool_cpu(fpga_conv1_output, pool1_output);
+
+    // Step 4: CPU Conv2
+    conv2_cpu(pool1_output, conv2_output);
+
+    // Step 5: CPU ReLU
+    relu_cpu_16(conv2_output);
+
+    // Step 6: CPU MaxPool
+    maxpool_cpu_16(conv2_output, pool2_output);
+
+    // Step 7: Flatten
+    flatten_cpu(pool2_output, fc_input);
+
+    // Step 8: CPU FC
+    fc_cpu(fc_input, fc_output);
+
+    // Copy output
+    for (int i = 0; i < 10; i++) {
+        output_scores[i] = fc_output[i];
+    }
+
+    XTime_GetTime(&tEnd);
+
+    double total_time = 1000.0 * (double)(tEnd - tStart) /
+                        (double)XPAR_CPU_CORTEXA9_0_CPU_CLK_FREQ_HZ;
+
+    xil_printf("\r\n[TIMING] FPGA Conv1: %d.%03d ms\r\n",
+               (int)fpga_time,
+               (int)((fpga_time-(int)fpga_time)*1000));
+
+    xil_printf("[TIMING] Total (FPGA+CPU): %d.%03d ms\r\n",
+               (int)total_time,
+               (int)((total_time-(int)total_time)*1000));
+
+    return total_time;
+}
+
+// ============================================================================
+// WEIGHT LOADING (Conv1 only for FPGA)
+// ============================================================================
+
+void load_conv1_weights_to_ddr()
+{
+    xil_printf("[DDR] Loading Conv1 weights...\r\n");
+
+    memcpy((void*)DDR_WEIGHTS_BUFFER, conv1_w, sizeof(conv1_w));
+    Xil_DCacheFlushRange(DDR_WEIGHTS_BUFFER, sizeof(conv1_w));
+
+    xil_printf("[DDR] Conv1 weight bytes: %d\r\n", sizeof(conv1_w));
+}
+
+void load_conv1_bias_to_ddr()
+{
+    xil_printf("[DDR] Loading Conv1 bias...\r\n");
+
+    memcpy((void*)DDR_BIAS_BUFFER, conv1_b, sizeof(conv1_b));
+    Xil_DCacheFlushRange(DDR_BIAS_BUFFER, sizeof(conv1_b));
+
+    xil_printf("[DDR] Conv1 bias bytes: %d\r\n", sizeof(conv1_b));
+}
+
+// ============================================================================
+// PREDICTION
+// ============================================================================
+
+int get_prediction(float *scores)
+{
+    int pred = 0;
+    float max = scores[0];
+
+    for(int i=1; i<10; i++)
+        if(scores[i] > max)
+        {
+            max = scores[i];
+            pred = i;
+        }
+
+    return pred;
+}
+
+// ============================================================================
+// UART FUNCTIONS
+// ============================================================================
+
+int init_uart()
+{
+    XUartPs_Config *Config;
+    int Status;
+
+    xil_printf("[UART] Initializing...\r\n");
+
+    Config = XUartPs_LookupConfig(UART_DEVICE_ID);
+    if (Config == NULL) {
+        return XST_FAILURE;
+    }
+
+    Status = XUartPs_CfgInitialize(&UartInstance, Config, Config->BaseAddress);
+    if (Status != XST_SUCCESS) {
+        return XST_FAILURE;
+    }
+
+    XUartPs_SetBaudRate(&UartInstance, UART_BAUD_RATE);
+
+    xil_printf("[UART] Ready at %d baud\r\n", UART_BAUD_RATE);
+    return XST_SUCCESS;
+}
+
+u8 uart_recv_byte()
+{
+    while (XUartPs_IsReceiveData(UartInstance.Config.BaseAddress) == FALSE);
+    return XUartPs_ReadReg(UartInstance.Config.BaseAddress, XUARTPS_FIFO_OFFSET);
+}
+
+void uart_send_byte(u8 byte)
+{
+    while (XUartPs_IsTransmitFull(UartInstance.Config.BaseAddress));
+    XUartPs_WriteReg(UartInstance.Config.BaseAddress, XUARTPS_FIFO_OFFSET, byte);
+}
+
+void realtime_detection_mode()
+{
+    xil_printf("\r\n========================================\r\n");
+    xil_printf("REAL-TIME DETECTION MODE\r\n");
+    xil_printf("========================================\r\n");
+    xil_printf("Waiting for images...\r\n\r\n");
+
+    float input_image[28][28];
+    float scores[10];
+    int frame_count = 0;
+
+    while (1) {
+        // Wait for start marker
+        u8 marker = uart_recv_byte();
+        if (marker != START_MARKER) continue;
+
+        // Receive 784 floats (3136 bytes)
+        u8 *img_bytes = (u8*)input_image;
+        for (int i = 0; i < 784 * 4; i++) {
+            img_bytes[i] = uart_recv_byte();
+        }
+
+        // Wait for end marker
+        u8 end = uart_recv_byte();
+        if (end != END_MARKER) {
+            uart_send_byte(0xFF);  // Error
+            continue;
+        }
+
+        // Run inference
+        double inf_time = run_hybrid_inference(input_image, scores);
+        int prediction = get_prediction(scores);
+
+        // Send result
+        uart_send_byte(START_MARKER);
+        uart_send_byte((u8)prediction);
+        uart_send_byte(END_MARKER);
+
+        // Print status
+        xil_printf("[%04d] Pred: %d | Time: %.1f ms\r\n",
+                   frame_count++, prediction, inf_time);
+    }
+}
+
+// ============================================================================
+// MAIN
+// ============================================================================
+
+int main()
+{
+    xil_printf("\r\n\r\n");
+    xil_printf("*****************************************\r\n");
+    xil_printf("*   HYBRID FPGA+CPU CNN TEST            *\r\n");
+    xil_printf("*   FPGA: Conv1 only                    *\r\n");
+    xil_printf("*   CPU: Remaining layers               *\r\n");
+    xil_printf("*****************************************\r\n");
+
+    reset_accelerator();
+
+    // Load only Conv1 weights (not Conv2/FC)
+    load_conv1_weights_to_ddr();
+    load_conv1_bias_to_ddr();
+
+    // Run hybrid inference
+    float output_scores[10];
+    double hybrid_time = run_hybrid_inference(test_image, output_scores);
+
+    // Get prediction
+    int pred = get_prediction(output_scores);
+
+    // CPU reference
+    float cpu_expected[10] = {
+        -4.716f, -6.920f, 1.416f, 0.899f, -12.468f,
+        -8.900f, -21.813f, 13.353f, -4.345f, -1.484f
+    };
+
+    // Compare
+    xil_printf("\r\n========================================\r\n");
+    xil_printf("RESULTS\r\n");
+    xil_printf("========================================\r\n");
+
+    xil_printf("\r\nOutput Scores:\r\n");
+    xil_printf("Class | Hybrid    | Expected\r\n");
+    xil_printf("------|-----------|----------\r\n");
+    for (int i = 0; i < 10; i++) {
+        int h_whole = (int)output_scores[i];
+        int h_frac = abs((int)((output_scores[i] - h_whole) * 1000));
+        int e_whole = (int)cpu_expected[i];
+        int e_frac = abs((int)((cpu_expected[i] - e_whole) * 1000));
+
+        xil_printf("  %d   | ", i);
+        if (output_scores[i] < 0) xil_printf("-");
+        xil_printf("%d.%03d   | ", abs(h_whole), h_frac);
+        if (cpu_expected[i] < 0) xil_printf("-");
+        xil_printf("%d.%03d\r\n", abs(e_whole), e_frac);
+    }
+
+    xil_printf("\r\nPrediction: %d\r\n", pred);
+    xil_printf("Expected:   %d\r\n", test_label);
+
+    if (pred == test_label) {
+        xil_printf("\r\n CORRECT PREDICTION!\r\n");
+    } else {
+        xil_printf("\r\n WRONG PREDICTION\r\n");
+    }
+
+    // Performance
+    double cpu_baseline = 30.26;
+    double speedup = cpu_baseline / hybrid_time;
+
+    xil_printf("\r\n========================================\r\n");
+    xil_printf("PERFORMANCE\r\n");
+    xil_printf("========================================\r\n");
+    xil_printf("Pure CPU:     %d.%02d ms\r\n",
+               (int)cpu_baseline,
+               (int)((cpu_baseline-(int)cpu_baseline)*100));
+    xil_printf("Hybrid (FPGA+CPU): %d.%03d ms\r\n",
+               (int)hybrid_time,
+               (int)((hybrid_time-(int)hybrid_time)*1000));
+    xil_printf("Speedup:      %d.%02dx\r\n",
+               (int)speedup,
+               (int)((speedup-(int)speedup)*100));
+
+    if (speedup > 1.0) {
+        xil_printf(" FPGA provides speedup!\r\n");
+    }
+
+    xil_printf("\r\nTest Complete\r\n\r\n");
+
+    return 0;
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;mnist_cnn_zedboard/src/main.cpp.backup&apos; to &apos;main.cpp&apos;" description="Rename resource &apos;main.cpp.backup&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main.cpp.backup" name="main.cpp" stamp="1770186882451" updateReferences="true"/>
+</session>

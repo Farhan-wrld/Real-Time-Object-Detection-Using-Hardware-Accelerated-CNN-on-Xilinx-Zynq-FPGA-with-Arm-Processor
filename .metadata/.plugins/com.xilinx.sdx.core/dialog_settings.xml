@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="sdx.custom.platform.repository.locations" value="C:\MNIST_Project\zedboard_platform\export\zedboard_platform;C:\MNIST_Project\zedboard_fpga_platform\export\zedboard_fpga_platform;C:\MNIST_Project\zedboard_fpga_platform_v2\export\zedboard_fpga_platform_v2;C:\MNIST_Project\zedboard_fpga_platform_v3\export\zedboard_fpga_platform_v3"/>
+</section>
