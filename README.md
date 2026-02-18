@@ -75,7 +75,7 @@ The system achieves **1.10x speedup** over pure CPU implementation while maintai
 │  ┌──────────────┐         ┌──────────────────┐            │
 │  │  OpenCV      │────────>│  Python Script   │            │
 │  │  Detection   │         │  Preprocessing   │            │
-│  └──────────────┘         └─────────┬────────┘            │
+│  └──────────────┘         └────────┬─────────┘            │
 └────────────────────────────────────┼──────────────────────┘
                                      │ UART
                                      │ (115200 baud)
