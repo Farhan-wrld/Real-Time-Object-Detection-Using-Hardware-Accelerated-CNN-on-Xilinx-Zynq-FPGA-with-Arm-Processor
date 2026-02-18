@@ -22,9 +22,7 @@ A hybrid CPU-FPGA system for real-time handwritten digit recognition using a Con
 - [Software Requirements](#software-requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
 - [Results](#results)
-- [Future Work](#future-work)
 - [Acknowledgments](#acknowledgments)
 
 ---
