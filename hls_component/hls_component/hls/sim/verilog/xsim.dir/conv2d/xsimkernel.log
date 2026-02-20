@@ -1,0 +1,7 @@
+Running: xsim.dir/conv2d/xsimk.exe -simmode gui -testplusarg UVM_VERBOSITY=UVM_NONE -testplusarg UVM_TESTNAME=conv2d_test_lib -testplusarg UVM_TIMEOUT=20000000000000 -wdb conv2d.wdb -simrunnum 0 -socket 51041
+Design successfully loaded
+Design Loading Memory Usage: 23188 KB (Peak: 23188 KB)
+Design Loading CPU Usage: 155 ms
+Simulation completed
+Simulation Memory Usage: 3988748 KB (Peak: 3988748 KB)
+Simulation CPU Usage: 408312 ms

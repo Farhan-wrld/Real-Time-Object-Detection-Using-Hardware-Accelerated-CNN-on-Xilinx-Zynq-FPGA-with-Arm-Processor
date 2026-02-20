@@ -1,0 +1,122 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-6999" msg_severity="WARNING" msg_loc="directive:1:1" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="conv2d" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=conv2d" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-6999" msg_severity="WARNING" msg_loc="conv2d.cpp:9:1" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="hls" ARG_PragmaFunction="conv2d" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=input bundle=gmem0 depth=784" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-6999" msg_severity="WARNING" msg_loc="conv2d.cpp:10:1" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="hls" ARG_PragmaFunction="conv2d" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=weights bundle=gmem1 depth=5224" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-6999" msg_severity="WARNING" msg_loc="conv2d.cpp:11:1" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="hls" ARG_PragmaFunction="conv2d" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=bias bundle=gmem1 depth=34" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-6999" msg_severity="WARNING" msg_loc="conv2d.cpp:12:1" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="hls" ARG_PragmaFunction="conv2d" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=output bundle=gmem2 depth=10" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-6999" msg_severity="WARNING" msg_loc="conv2d.cpp:14:1" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="hls" ARG_PragmaFunction="conv2d" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=input" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-6999" msg_severity="WARNING" msg_loc="conv2d.cpp:15:1" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="hls" ARG_PragmaFunction="conv2d" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=weights" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-6999" msg_severity="WARNING" msg_loc="conv2d.cpp:16:1" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="hls" ARG_PragmaFunction="conv2d" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=bias" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-6999" msg_severity="WARNING" msg_loc="conv2d.cpp:17:1" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="hls" ARG_PragmaFunction="conv2d" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=output" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-6999" msg_severity="WARNING" msg_loc="conv2d.cpp:18:1" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="hls" ARG_PragmaFunction="conv2d" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="conv2d.cpp:39:30" msg_body="pipeline   1 conv2d config_compile -pipeline_loops 64VITIS_LOOP_39_3 conv2d.cpp:39:30">
+        <args LoopLoc="conv2d.cpp:39:30" LoopLoc-DebugLoc="File conv2d.cpp Line 39 Column 30" LoopName="VITIS_LOOP_39_3" PragmaFunction="conv2d" PragmaInferReason="config_compile -pipeline_loops 64" PragmaIsAuto="1" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="conv2d.cpp:62:30" msg_body="pipeline   1 conv2d config_compile -pipeline_loops 64VITIS_LOOP_62_8 conv2d.cpp:62:30">
+        <args LoopLoc="conv2d.cpp:62:30" LoopLoc-DebugLoc="File conv2d.cpp Line 62 Column 30" LoopName="VITIS_LOOP_62_8" PragmaFunction="conv2d" PragmaInferReason="config_compile -pipeline_loops 64" PragmaIsAuto="1" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="conv2d.cpp:93:43" msg_body="pipeline   1 conv2d config_compile -pipeline_loops 64VITIS_LOOP_93_16 conv2d.cpp:93:43">
+        <args LoopLoc="conv2d.cpp:93:43" LoopLoc-DebugLoc="File conv2d.cpp Line 93 Column 43" LoopName="VITIS_LOOP_93_16" PragmaFunction="conv2d" PragmaInferReason="config_compile -pipeline_loops 64" PragmaIsAuto="1" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="conv2d.cpp:118:32" msg_body="pipeline   1 conv2d config_compile -pipeline_loops 64VITIS_LOOP_118_19 conv2d.cpp:118:32">
+        <args LoopLoc="conv2d.cpp:118:32" LoopLoc-DebugLoc="File conv2d.cpp Line 118 Column 32" LoopName="VITIS_LOOP_118_19" PragmaFunction="conv2d" PragmaInferReason="config_compile -pipeline_loops 64" PragmaIsAuto="1" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="conv2d.cpp:139:32" msg_body="pipeline   1 conv2d config_compile -pipeline_loops 64VITIS_LOOP_139_24 conv2d.cpp:139:32">
+        <args LoopLoc="conv2d.cpp:139:32" LoopLoc-DebugLoc="File conv2d.cpp Line 139 Column 32" LoopName="VITIS_LOOP_139_24" PragmaFunction="conv2d" PragmaInferReason="config_compile -pipeline_loops 64" PragmaIsAuto="1" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="conv2d.cpp:155:28" msg_body="pipeline   1 conv2d config_compile -pipeline_loops 64VITIS_LOOP_155_26 conv2d.cpp:155:28">
+        <args LoopLoc="conv2d.cpp:155:28" LoopLoc-DebugLoc="File conv2d.cpp Line 155 Column 28" LoopName="VITIS_LOOP_155_26" PragmaFunction="conv2d" PragmaInferReason="config_compile -pipeline_loops 64" PragmaIsAuto="1" PragmaType="pipeline"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="conv2d.cpp:122:36" msg_body="Loop 'VITIS_LOOP_122_20' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_122_20"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="conv2d.cpp:123:40" msg_body="Loop 'VITIS_LOOP_123_21' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_123_21"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="conv2d.cpp:66:34" msg_body="Loop 'VITIS_LOOP_66_9' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_66_9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="conv2d.cpp:67:39" msg_body="Loop 'VITIS_LOOP_67_10' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_67_10"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="conv2d.cpp:43:34" msg_body="Loop 'VITIS_LOOP_43_4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_43_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="conv2d.cpp:44:38" msg_body="Loop 'VITIS_LOOP_44_5' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_44_5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="conv2d.cpp:8:0" msg_body="Unrolling loop 'VITIS_LOOP_122_20' (conv2d.cpp:122:36) in function 'conv2d' completely with a factor of 2">
+        <args Factor="2" LoopLoc="conv2d.cpp:122:36" LoopName="VITIS_LOOP_122_20"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="conv2d.cpp:8:0" msg_body="Unrolling loop 'VITIS_LOOP_123_21' (conv2d.cpp:123:40) in function 'conv2d' completely with a factor of 2">
+        <args Factor="2" LoopLoc="conv2d.cpp:123:40" LoopName="VITIS_LOOP_123_21"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="conv2d.cpp:8:0" msg_body="Unrolling loop 'VITIS_LOOP_66_9' (conv2d.cpp:66:34) in function 'conv2d' completely with a factor of 2">
+        <args Factor="2" LoopLoc="conv2d.cpp:66:34" LoopName="VITIS_LOOP_66_9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="conv2d.cpp:8:0" msg_body="Unrolling loop 'VITIS_LOOP_67_10' (conv2d.cpp:67:39) in function 'conv2d' completely with a factor of 2">
+        <args Factor="2" LoopLoc="conv2d.cpp:67:39" LoopName="VITIS_LOOP_67_10"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="conv2d.cpp:8:0" msg_body="Unrolling loop 'VITIS_LOOP_43_4' (conv2d.cpp:43:34) in function 'conv2d' completely with a factor of 3">
+        <args Factor="3" LoopLoc="conv2d.cpp:43:34" LoopName="VITIS_LOOP_43_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="conv2d.cpp:8:0" msg_body="Unrolling loop 'VITIS_LOOP_44_5' (conv2d.cpp:44:38) in function 'conv2d' completely with a factor of 3">
+        <args Factor="3" LoopLoc="conv2d.cpp:44:38" LoopName="VITIS_LOOP_44_5"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-437" msg_severity="INFO" msg_loc="conv2d.cpp:151:24" msg_body="Disabling loop flattening for loop 'VITIS_LOOP_151_25'.">
+        <args LoopName="VITIS_LOOP_151_25"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="conv2d.cpp:151:24" msg_body="loop_flatten off  1 conv2d VITIS_LOOP_151_25 conv2d.cpp:151:24">
+        <args LoopLoc="conv2d.cpp:151:24" LoopLoc-DebugLoc="File conv2d.cpp Line 151 Column 24" LoopName="VITIS_LOOP_151_25" PragmaFunction="conv2d" PragmaIsAuto="1" PragmaOptions="off" PragmaType="loop_flatten"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-437" msg_severity="INFO" msg_loc="conv2d.cpp:85:23" msg_body="Disabling loop flattening for loop 'VITIS_LOOP_85_11'.">
+        <args LoopName="VITIS_LOOP_85_11"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="conv2d.cpp:85:23" msg_body="loop_flatten off  1 conv2d VITIS_LOOP_85_11 conv2d.cpp:85:23">
+        <args LoopLoc="conv2d.cpp:85:23" LoopLoc-DebugLoc="File conv2d.cpp Line 85 Column 23" LoopName="VITIS_LOOP_85_11" PragmaFunction="conv2d" PragmaIsAuto="1" PragmaOptions="off" PragmaType="loop_flatten"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-437" msg_severity="INFO" msg_loc="conv2d.cpp:37:22" msg_body="Disabling loop flattening for loop 'VITIS_LOOP_37_1'.">
+        <args LoopName="VITIS_LOOP_37_1"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="conv2d.cpp:37:22" msg_body="loop_flatten off  1 conv2d VITIS_LOOP_37_1 conv2d.cpp:37:22">
+        <args LoopLoc="conv2d.cpp:37:22" LoopLoc-DebugLoc="File conv2d.cpp Line 37 Column 22" LoopName="VITIS_LOOP_37_1" PragmaFunction="conv2d" PragmaIsAuto="1" PragmaOptions="off" PragmaType="loop_flatten"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="conv2d.cpp:24:11" msg_body="array_partition dim=3 type=cyclic factor=2 variable=conv1_out 1 conv2d conv2d.cpp:24:11 conv1_out">
+        <args PragmaFunction="conv2d" PragmaIsAuto="1" PragmaOptions="dim=3 type=cyclic factor=2 variable=conv1_out" PragmaType="array_partition" VarLoc="conv2d.cpp:24:11" VarName="conv1_out"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="conv2d.cpp:24:11" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=3' for array 'conv1_out' due to pipeline pragma">
+        <args Dim="3" Factor="2" Mode="cyclic" Name="conv1_out" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="conv2d.cpp:27:11" msg_body="array_partition dim=3 type=cyclic factor=2 variable=conv2_out 1 conv2d conv2d.cpp:27:11 conv2_out">
+        <args PragmaFunction="conv2d" PragmaIsAuto="1" PragmaOptions="dim=3 type=cyclic factor=2 variable=conv2_out" PragmaType="array_partition" VarLoc="conv2d.cpp:27:11" VarName="conv2_out"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="conv2d.cpp:27:11" msg_body="Inferring pragma 'array_partition type=cyclic factor=2 dim=3' for array 'conv2_out' due to pipeline pragma">
+        <args Dim="3" Factor="2" Mode="cyclic" Name="conv2_out" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="conv2d.cpp:24:11" msg_body="Applying array_partition to 'conv1_out': Cyclic partitioning with factor 2 on dimension 3.">
+        <args Dim="3" Factor="2" Mode="Cyclic" UOName="conv1_out"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="conv2d.cpp:27:11" msg_body="Applying array_partition to 'conv2_out': Cyclic partitioning with factor 2 on dimension 3.">
+        <args Dim="3" Factor="2" Mode="Cyclic" UOName="conv2_out"/>
+    </msg>
+</xilinx:hls_fe_msgs>

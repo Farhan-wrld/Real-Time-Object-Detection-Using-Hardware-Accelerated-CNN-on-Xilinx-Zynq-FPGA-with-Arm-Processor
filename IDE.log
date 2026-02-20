@@ -4627,3 +4627,217 @@ con
 10:11:58 INFO  : Platform repository initialization has completed.
 10:11:58 INFO  : Successfully done query RDI_DATADIR 
 10:11:58 INFO  : Registering command handlers for Vitis TCF services
+15:34:01 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\MNIST_Project\temp_xsdb_launch_script.tcl
+15:34:04 INFO  : XSCT server has started successfully.
+15:34:04 INFO  : Successfully done setting XSCT server connection channel  
+15:34:04 INFO  : plnx-install-location is set to ''
+15:34:04 INFO  : Successfully done setting workspace for the tool. 
+15:34:12 INFO  : Platform repository initialization has completed.
+15:34:13 INFO  : Registering command handlers for Vitis TCF services
+15:34:13 INFO  : Successfully done query RDI_DATADIR 
+15:35:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:35:37 INFO  : Jtag cable 'Digilent Zed 210248650087' is selected.
+15:35:37 INFO  : 'jtag frequency' command is executed.
+15:35:37 INFO  : Context for 'APU' is selected.
+15:35:37 INFO  : System reset is completed.
+15:35:40 INFO  : 'after 3000' command is executed.
+15:35:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650087" && level==0 && jtag_device_ctx=="jsn-Zed-210248650087-23727093-0"}' command is executed.
+15:35:43 INFO  : Device configured successfully with "C:/MNIST_Project/cnn_fpga_test_v3/_ide/bitstream/system_wrapper.bit"
+15:35:43 INFO  : Context for 'APU' is selected.
+15:35:43 INFO  : Hardware design and registers information is loaded from 'C:/MNIST_Project/zedboard_fpga_platform_v3/export/zedboard_fpga_platform_v3/hw/system_wrapper4.xsa'.
+15:35:43 INFO  : 'configparams force-mem-access 1' command is executed.
+15:35:43 INFO  : Context for 'APU' is selected.
+15:35:43 INFO  : Sourcing of 'C:/MNIST_Project/cnn_fpga_test_v3/_ide/psinit/ps7_init.tcl' is done.
+15:35:44 INFO  : 'ps7_init' command is executed.
+15:35:44 INFO  : 'ps7_post_config' command is executed.
+15:35:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:35:44 INFO  : The application 'C:/MNIST_Project/cnn_fpga_test_v3/Debug/cnn_fpga_test_v3.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:35:44 INFO  : 'configparams force-mem-access 0' command is executed.
+15:35:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650087" && level==0 && jtag_device_ctx=="jsn-Zed-210248650087-23727093-0"}
+fpga -file C:/MNIST_Project/cnn_fpga_test_v3/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/MNIST_Project/zedboard_fpga_platform_v3/export/zedboard_fpga_platform_v3/hw/system_wrapper4.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/MNIST_Project/cnn_fpga_test_v3/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/MNIST_Project/cnn_fpga_test_v3/Debug/cnn_fpga_test_v3.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:35:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:35:44 INFO  : 'con' command is executed.
+15:35:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:35:44 INFO  : Launch script is exported to file 'C:\MNIST_Project\cnn_fpga_test_v3_system\_ide\scripts\systemdebugger_cnn_fpga_test_v3_system_standalone.tcl'
+15:42:42 INFO  : Result from executing command 'getProjects': zedboard_fpga_platform;zedboard_fpga_platform_v2;zedboard_fpga_platform_v3;zedboard_platform
+15:42:42 INFO  : Result from executing command 'getPlatforms': zedboard_fpga_platform_v2|C:/MNIST_Project/zedboard_fpga_platform_v2/export/zedboard_fpga_platform_v2/zedboard_fpga_platform_v2.xpfm;zedboard_fpga_platform_v3|C:/MNIST_Project/zedboard_fpga_platform_v3/export/zedboard_fpga_platform_v3/zedboard_fpga_platform_v3.xpfm;zedboard_fpga_platform|C:/MNIST_Project/zedboard_fpga_platform/export/zedboard_fpga_platform/zedboard_fpga_platform.xpfm;zedboard_platform|C:/MNIST_Project/zedboard_platform/export/zedboard_platform/zedboard_platform.xpfm
+15:42:42 INFO  : Checking for BSP changes to sync application flags for project 'cnn_fpga_test_v3'...
+15:44:04 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\MNIST_Project\temp_xsdb_launch_script.tcl
+15:44:07 INFO  : XSCT server has started successfully.
+15:44:07 INFO  : plnx-install-location is set to ''
+15:44:07 INFO  : Successfully done setting XSCT server connection channel  
+15:44:07 INFO  : Successfully done setting workspace for the tool. 
+15:44:14 INFO  : Platform repository initialization has completed.
+15:44:14 INFO  : Registering command handlers for Vitis TCF services
+15:44:16 INFO  : Successfully done query RDI_DATADIR 
+15:45:58 ERROR : Failed to connect to hardware server on host '127.0.0.1' and port '3121'.
+Reason: 'connect -url tcp:127.0.0.1:3121' is cancelled.
+15:45:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+15:45:58 ERROR : Failed to connect to hardware server on host '127.0.0.1' and port '3121'.
+Reason: 'connect -url tcp:127.0.0.1:3121' is cancelled.
+15:46:20 ERROR : Failed to connect to hardware server on host '127.0.0.1' and port '3121'.
+Reason: 'connect -url tcp:127.0.0.1:3121' is cancelled.
+15:46:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+15:46:20 ERROR : Failed to connect to hardware server on host '127.0.0.1' and port '3121'.
+Reason: 'connect -url tcp:127.0.0.1:3121' is cancelled.
+15:49:26 ERROR : Failed to connect to hardware server on host '127.0.0.1' and port '3121'.
+Reason: 'connect -url tcp:127.0.0.1:3121' is cancelled.
+15:49:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+15:49:26 ERROR : Failed to connect to hardware server on host '127.0.0.1' and port '3121'.
+Reason: 'connect -url tcp:127.0.0.1:3121' is cancelled.
+15:51:05 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\MNIST_Project\temp_xsdb_launch_script.tcl
+15:51:08 INFO  : XSCT server has started successfully.
+15:51:08 INFO  : Successfully done setting XSCT server connection channel  
+15:51:08 INFO  : plnx-install-location is set to ''
+15:51:08 INFO  : Successfully done setting workspace for the tool. 
+15:51:15 INFO  : Platform repository initialization has completed.
+15:51:15 INFO  : Successfully done query RDI_DATADIR 
+15:51:16 INFO  : Registering command handlers for Vitis TCF services
+15:52:05 ERROR : Failed to connect to hardware server on host '127.0.0.1' and port '3121'.
+Reason: 'connect -url tcp:127.0.0.1:3121' is cancelled.
+15:55:35 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\MNIST_Project\temp_xsdb_launch_script.tcl
+15:55:38 INFO  : XSCT server has started successfully.
+15:55:38 INFO  : plnx-install-location is set to ''
+15:55:38 INFO  : Successfully done setting XSCT server connection channel  
+15:55:38 INFO  : Successfully done setting workspace for the tool. 
+15:55:44 INFO  : Platform repository initialization has completed.
+15:55:44 INFO  : Successfully done query RDI_DATADIR 
+15:55:45 INFO  : Registering command handlers for Vitis TCF services
+15:59:09 ERROR : Failed to connect to hardware server on host '127.0.0.1' and port '3121'.
+Reason: 'connect -url tcp:127.0.0.1:3121' is cancelled.
+15:59:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+15:59:09 ERROR : Failed to connect to hardware server on host '127.0.0.1' and port '3121'.
+Reason: 'connect -url tcp:127.0.0.1:3121' is cancelled.
+16:01:11 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\MNIST_Project\temp_xsdb_launch_script.tcl
+16:01:14 INFO  : XSCT server has started successfully.
+16:01:14 INFO  : plnx-install-location is set to ''
+16:01:14 INFO  : Successfully done setting XSCT server connection channel  
+16:01:14 INFO  : Successfully done setting workspace for the tool. 
+16:01:20 INFO  : Platform repository initialization has completed.
+16:01:21 INFO  : Registering command handlers for Vitis TCF services
+16:01:21 INFO  : Successfully done query RDI_DATADIR 
+16:02:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:02:25 INFO  : Jtag cable 'Digilent Zed 210248650087' is selected.
+16:02:25 INFO  : 'jtag frequency' command is executed.
+16:02:25 INFO  : Context for 'APU' is selected.
+16:02:25 INFO  : System reset is completed.
+16:02:28 INFO  : 'after 3000' command is executed.
+16:02:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650087" && level==0 && jtag_device_ctx=="jsn-Zed-210248650087-23727093-0"}' command is executed.
+16:02:31 INFO  : Device configured successfully with "C:/MNIST_Project/cnn_fpga_test_v3/_ide/bitstream/system_wrapper.bit"
+16:02:31 INFO  : Context for 'APU' is selected.
+16:02:31 INFO  : Hardware design and registers information is loaded from 'C:/MNIST_Project/zedboard_fpga_platform_v3/export/zedboard_fpga_platform_v3/hw/system_wrapper4.xsa'.
+16:02:31 INFO  : 'configparams force-mem-access 1' command is executed.
+16:02:31 INFO  : Context for 'APU' is selected.
+16:02:31 INFO  : Sourcing of 'C:/MNIST_Project/cnn_fpga_test_v3/_ide/psinit/ps7_init.tcl' is done.
+16:02:32 INFO  : 'ps7_init' command is executed.
+16:02:32 INFO  : 'ps7_post_config' command is executed.
+16:02:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:02:32 INFO  : The application 'C:/MNIST_Project/cnn_fpga_test_v3/Debug/cnn_fpga_test_v3.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:02:32 INFO  : 'configparams force-mem-access 0' command is executed.
+16:02:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650087" && level==0 && jtag_device_ctx=="jsn-Zed-210248650087-23727093-0"}
+fpga -file C:/MNIST_Project/cnn_fpga_test_v3/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/MNIST_Project/zedboard_fpga_platform_v3/export/zedboard_fpga_platform_v3/hw/system_wrapper4.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/MNIST_Project/cnn_fpga_test_v3/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/MNIST_Project/cnn_fpga_test_v3/Debug/cnn_fpga_test_v3.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:02:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:02:32 INFO  : 'con' command is executed.
+16:02:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:02:32 INFO  : Launch script is exported to file 'C:\MNIST_Project\cnn_fpga_test_v3_system\_ide\scripts\systemdebugger_cnn_fpga_test_v3_system_standalone.tcl'
+16:03:19 INFO  : Disconnected from the channel tcfchan#1.
+16:03:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:03:20 INFO  : Jtag cable 'Digilent Zed 210248650087' is selected.
+16:03:20 INFO  : 'jtag frequency' command is executed.
+16:03:20 INFO  : Context for 'APU' is selected.
+16:03:20 INFO  : System reset is completed.
+16:03:23 INFO  : 'after 3000' command is executed.
+16:03:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650087" && level==0 && jtag_device_ctx=="jsn-Zed-210248650087-23727093-0"}' command is executed.
+16:03:25 INFO  : Device configured successfully with "C:/MNIST_Project/cnn_fpga_test_v3/_ide/bitstream/system_wrapper.bit"
+16:03:25 INFO  : Context for 'APU' is selected.
+16:03:29 INFO  : Hardware design and registers information is loaded from 'C:/MNIST_Project/zedboard_fpga_platform_v3/export/zedboard_fpga_platform_v3/hw/system_wrapper4.xsa'.
+16:03:29 INFO  : 'configparams force-mem-access 1' command is executed.
+16:03:29 INFO  : Context for 'APU' is selected.
+16:03:29 INFO  : Sourcing of 'C:/MNIST_Project/cnn_fpga_test_v3/_ide/psinit/ps7_init.tcl' is done.
+16:03:29 INFO  : 'ps7_init' command is executed.
+16:03:29 INFO  : 'ps7_post_config' command is executed.
+16:03:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:03:30 INFO  : The application 'C:/MNIST_Project/cnn_fpga_test_v3/Debug/cnn_fpga_test_v3.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:03:30 INFO  : 'configparams force-mem-access 0' command is executed.
+16:03:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248650087" && level==0 && jtag_device_ctx=="jsn-Zed-210248650087-23727093-0"}
+fpga -file C:/MNIST_Project/cnn_fpga_test_v3/_ide/bitstream/system_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/MNIST_Project/zedboard_fpga_platform_v3/export/zedboard_fpga_platform_v3/hw/system_wrapper4.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/MNIST_Project/cnn_fpga_test_v3/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/MNIST_Project/cnn_fpga_test_v3/Debug/cnn_fpga_test_v3.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:03:30 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:03:30 INFO  : 'con' command is executed.
+16:03:30 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:03:30 INFO  : Launch script is exported to file 'C:\MNIST_Project\cnn_fpga_test_v3_system\_ide\scripts\systemdebugger_cnn_fpga_test_v3_system_standalone.tcl'
+16:18:31 INFO  : Disconnected from the channel tcfchan#2.

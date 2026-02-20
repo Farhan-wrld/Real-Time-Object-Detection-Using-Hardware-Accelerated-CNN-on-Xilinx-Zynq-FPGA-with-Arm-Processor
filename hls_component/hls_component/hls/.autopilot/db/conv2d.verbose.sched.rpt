@@ -1,0 +1,635 @@
+
+
+================================================================
+== Vitis HLS Report for 'conv2d'
+================================================================
+* Date:           Tue Feb 17 12:08:13 2026
+
+* Version:        2025.2 (Build 6295257 on Nov 14 2025)
+* Project:        hls_component
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+---------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    | Pipeline|
+    |   min   |   max   |    min   |    max   |   min  |   max  |   Type  |
+    +---------+---------+----------+----------+--------+--------+---------+
+    |   912528|   912528|  9.125 ms|  9.125 ms|  912529|  912529|       no|
+    +---------+---------+----------+----------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_37_1    |    49208|    49208|      6151|          -|          -|     8|        no|
+        |- VITIS_LOOP_85_11   |   836848|   836848|     52303|          -|          -|    16|        no|
+        |- VITIS_LOOP_151_25  |    24280|    24280|      2428|          -|          -|    10|        no|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 47
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 14 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 2 
+14 --> 15 
+15 --> 16 27 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 15 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 43 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 30 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%phi_mul = alloca i32 1"   --->   Operation 48 'alloca' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%oc = alloca i32 1" [conv2d.cpp:37]   --->   Operation 49 'alloca' 'oc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (1.00ns)   --->   "%output_r_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %output_r"   --->   Operation 50 'read' 'output_r_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 112 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 51 [1/1] (1.00ns)   --->   "%bias_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %bias"   --->   Operation 51 'read' 'bias_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 112 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 52 [1/1] (1.00ns)   --->   "%weights_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %weights"   --->   Operation 52 'read' 'weights_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 112 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 53 [1/1] (1.00ns)   --->   "%input_r_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %input_r"   --->   Operation 53 'read' 'input_r_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 112 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%sum_15_loc = alloca i64 1"   --->   Operation 54 'alloca' 'sum_15_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%spectopmodule_ln3 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_11" [conv2d.cpp:3]   --->   Operation 55 'spectopmodule' 'spectopmodule_ln3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem0, void @empty_14, i32 0, i32 0, void @empty_17, i32 0, i32 784, void @empty, void @empty_0, void @empty_17, i32 16, i32 16, i32 16, i32 16, void @empty_17, void @empty_17, i32 4294967295, i32 0, i32 0, i32 4"   --->   Operation 56 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem0"   --->   Operation 57 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem1, void @empty_14, i32 0, i32 0, void @empty_17, i32 0, i32 5224, void @empty_1, void @empty_0, void @empty_17, i32 16, i32 16, i32 16, i32 16, void @empty_17, void @empty_17, i32 4294967295, i32 0, i32 0, i32 4"   --->   Operation 58 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem1"   --->   Operation 59 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem2, void @empty_14, i32 0, i32 0, void @empty_17, i32 0, i32 10, void @empty_2, void @empty_0, void @empty_17, i32 16, i32 16, i32 16, i32 16, void @empty_17, void @empty_17, i32 4294967295, i32 0, i32 0, i32 4"   --->   Operation 60 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %gmem2"   --->   Operation 61 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %input_r, void @empty_3, i32 4294967295, i32 4294967295, void @empty_17, i32 0, i32 0, void @empty_4, void @empty_5, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_6, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 62 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %input_r, void @empty_7, i32 0, i32 0, void @empty_17, i32 0, i32 0, void @empty_17, void @empty_17, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_6, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 63 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %weights, void @empty_3, i32 4294967295, i32 4294967295, void @empty_17, i32 0, i32 0, void @empty_4, void @empty_8, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_6, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 64 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %weights, void @empty_7, i32 0, i32 0, void @empty_17, i32 0, i32 0, void @empty_17, void @empty_17, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_6, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 65 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %bias, void @empty_3, i32 4294967295, i32 4294967295, void @empty_17, i32 0, i32 0, void @empty_4, void @empty_9, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_6, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 66 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %bias, void @empty_7, i32 0, i32 0, void @empty_17, i32 0, i32 0, void @empty_17, void @empty_17, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_6, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 67 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %output_r, void @empty_3, i32 4294967295, i32 4294967295, void @empty_17, i32 0, i32 0, void @empty_4, void @empty_10, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_6, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 68 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %output_r, void @empty_7, i32 0, i32 0, void @empty_17, i32 0, i32 0, void @empty_17, void @empty_17, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_6, i32 4294967295, i32 0, i32 0, i32 0"   --->   Operation 69 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_3, i32 0, i32 0, void @empty_17, i32 0, i32 0, void @empty_4, void @empty_17, void @empty_17, i32 0, i32 0, i32 0, i32 0, void @empty_17, void @empty_17, i32 0, i32 0, i32 0, i32 0"   --->   Operation 70 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%conv1_out = alloca i64 1" [conv2d.cpp:24]   --->   Operation 71 'alloca' 'conv1_out' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%conv1_out_1 = alloca i64 1" [conv2d.cpp:24]   --->   Operation 72 'alloca' 'conv1_out_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%pool1_out = alloca i64 1" [conv2d.cpp:25]   --->   Operation 73 'alloca' 'pool1_out' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%conv2_out = alloca i64 1" [conv2d.cpp:27]   --->   Operation 74 'alloca' 'conv2_out' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%conv2_out_1 = alloca i64 1" [conv2d.cpp:27]   --->   Operation 75 'alloca' 'conv2_out_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%pool2_out = alloca i64 1" [conv2d.cpp:28]   --->   Operation 76 'alloca' 'pool2_out' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%fc_in = alloca i64 1" [conv2d.cpp:30]   --->   Operation 77 'alloca' 'fc_in' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%trunc_ln = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %bias_read, i32 2, i32 63" [conv2d.cpp:37]   --->   Operation 78 'partselect' 'trunc_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%sext_ln37 = sext i62 %trunc_ln" [conv2d.cpp:37]   --->   Operation 79 'sext' 'sext_ln37' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (1.58ns)   --->   "%store_ln37 = store i4 0, i4 %oc" [conv2d.cpp:37]   --->   Operation 80 'store' 'store_ln37' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 81 [1/1] (1.58ns)   --->   "%store_ln0 = store i8 0, i8 %phi_mul"   --->   Operation 81 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%br_ln37 = br void %VITIS_LOOP_38_2" [conv2d.cpp:37]   --->   Operation 82 'br' 'br_ln37' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 3.50>
+ST_2 : Operation 83 [1/1] (0.00ns)   --->   "%phi_mul_load = load i8 %phi_mul" [conv2d.cpp:37]   --->   Operation 83 'load' 'phi_mul_load' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 84 [1/1] (0.00ns)   --->   "%oc_2 = load i4 %oc" [conv2d.cpp:37]   --->   Operation 84 'load' 'oc_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 85 [1/1] (1.91ns)   --->   "%add_ln37_1 = add i8 %phi_mul_load, i8 26" [conv2d.cpp:37]   --->   Operation 85 'add' 'add_ln37_1' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 86 [1/1] (1.73ns)   --->   "%icmp_ln37 = icmp_eq  i4 %oc_2, i4 8" [conv2d.cpp:37]   --->   Operation 86 'icmp' 'icmp_ln37' <Predicate = true> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 87 [1/1] (1.73ns)   --->   "%add_ln37 = add i4 %oc_2, i4 1" [conv2d.cpp:37]   --->   Operation 87 'add' 'add_ln37' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 88 [1/1] (0.00ns)   --->   "%br_ln37 = br i1 %icmp_ln37, void %VITIS_LOOP_38_2.split, void %VITIS_LOOP_66_9.preheader" [conv2d.cpp:37]   --->   Operation 88 'br' 'br_ln37' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 89 [1/1] (0.00ns)   --->   "%zext_ln37 = zext i4 %oc_2" [conv2d.cpp:37]   --->   Operation 89 'zext' 'zext_ln37' <Predicate = (!icmp_ln37)> <Delay = 0.00>
+ST_2 : Operation 90 [1/1] (3.46ns)   --->   "%add_ln41_1 = add i63 %zext_ln37, i63 %sext_ln37" [conv2d.cpp:41]   --->   Operation 90 'add' 'add_ln41_1' <Predicate = (!icmp_ln37)> <Delay = 3.46> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.46> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 91 [1/1] (0.00ns)   --->   "%sext_ln41 = sext i63 %add_ln41_1" [conv2d.cpp:41]   --->   Operation 91 'sext' 'sext_ln41' <Predicate = (!icmp_ln37)> <Delay = 0.00>
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "%gmem1_addr = getelementptr i32 %gmem1, i64 %sext_ln41" [conv2d.cpp:41]   --->   Operation 92 'getelementptr' 'gmem1_addr' <Predicate = (!icmp_ln37)> <Delay = 0.00>
+ST_2 : Operation 93 [1/1] (1.58ns)   --->   "%store_ln37 = store i4 %add_ln37, i4 %oc" [conv2d.cpp:37]   --->   Operation 93 'store' 'store_ln37' <Predicate = (!icmp_ln37)> <Delay = 1.58>
+ST_2 : Operation 94 [1/1] (1.58ns)   --->   "%store_ln37 = store i8 %add_ln37_1, i8 %phi_mul" [conv2d.cpp:37]   --->   Operation 94 'store' 'store_ln37' <Predicate = (!icmp_ln37)> <Delay = 1.58>
+ST_2 : Operation 95 [1/1] (0.00ns)   --->   "%phi_mul182 = alloca i32 1"   --->   Operation 95 'alloca' 'phi_mul182' <Predicate = (icmp_ln37)> <Delay = 0.00>
+ST_2 : Operation 96 [1/1] (0.00ns)   --->   "%oc_1 = alloca i32 1" [conv2d.cpp:85]   --->   Operation 96 'alloca' 'oc_1' <Predicate = (icmp_ln37)> <Delay = 0.00>
+ST_2 : Operation 97 [2/2] (0.00ns)   --->   "%call_ln0 = call void @conv2d_Pipeline_VITIS_LOOP_60_6_VITIS_LOOP_61_7_VITIS_LOOP_62_8, i32 %conv1_out, i32 %conv1_out_1, i32 %pool1_out"   --->   Operation 97 'call' 'call_ln0' <Predicate = (icmp_ln37)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 98 [1/1] (1.58ns)   --->   "%store_ln85 = store i5 0, i5 %oc_1" [conv2d.cpp:85]   --->   Operation 98 'store' 'store_ln85' <Predicate = (icmp_ln37)> <Delay = 1.58>
+ST_2 : Operation 99 [1/1] (1.58ns)   --->   "%store_ln0 = store i8 0, i8 %phi_mul182"   --->   Operation 99 'store' 'store_ln0' <Predicate = (icmp_ln37)> <Delay = 1.58>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 100 [8/8] (7.30ns)   --->   "%gmem1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr, i64 1" [conv2d.cpp:41]   --->   Operation 100 'readreq' 'gmem1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 101 [7/8] (7.30ns)   --->   "%gmem1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr, i64 1" [conv2d.cpp:41]   --->   Operation 101 'readreq' 'gmem1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 102 [6/8] (7.30ns)   --->   "%gmem1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr, i64 1" [conv2d.cpp:41]   --->   Operation 102 'readreq' 'gmem1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 103 [5/8] (7.30ns)   --->   "%gmem1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr, i64 1" [conv2d.cpp:41]   --->   Operation 103 'readreq' 'gmem1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 104 [4/8] (7.30ns)   --->   "%gmem1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr, i64 1" [conv2d.cpp:41]   --->   Operation 104 'readreq' 'gmem1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 105 [3/8] (7.30ns)   --->   "%gmem1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr, i64 1" [conv2d.cpp:41]   --->   Operation 105 'readreq' 'gmem1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 106 [2/8] (7.30ns)   --->   "%gmem1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr, i64 1" [conv2d.cpp:41]   --->   Operation 106 'readreq' 'gmem1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 10 <SV = 9> <Delay = 7.30>
+ST_10 : Operation 107 [1/8] ( I:7.30ns O:7.30ns )   --->   "%gmem1_load_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr, i64 1" [conv2d.cpp:41]   --->   Operation 107 'readreq' 'gmem1_load_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 11 <SV = 10> <Delay = 7.30>
+ST_11 : Operation 108 [1/1] (0.00ns)   --->   "%p_shl3 = bitconcatenate i9 @_ssdm_op_BitConcatenate.i9.i4.i5, i4 %oc_2, i5 0" [conv2d.cpp:41]   --->   Operation 108 'bitconcatenate' 'p_shl3' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 109 [1/1] (0.00ns)   --->   "%tmp = bitconcatenate i6 @_ssdm_op_BitConcatenate.i6.i4.i2, i4 %oc_2, i2 0" [conv2d.cpp:41]   --->   Operation 109 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 110 [1/1] (0.00ns)   --->   "%zext_ln41_1 = zext i6 %tmp" [conv2d.cpp:41]   --->   Operation 110 'zext' 'zext_ln41_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 111 [1/1] (1.82ns)   --->   "%add_ln41_2 = add i9 %p_shl3, i9 %zext_ln41_1" [conv2d.cpp:41]   --->   Operation 111 'add' 'add_ln41_2' <Predicate = true> <Delay = 1.82> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 112 [1/1] ( I:7.30ns O:7.30ns )   --->   "%gmem1_addr_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem1_addr" [conv2d.cpp:41]   --->   Operation 112 'read' 'gmem1_addr_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 11> <Delay = 6.98>
+ST_12 : Operation 113 [1/1] (0.00ns)   --->   "%zext_ln41 = zext i9 %add_ln41_2" [conv2d.cpp:41]   --->   Operation 113 'zext' 'zext_ln41' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 114 [1/1] (3.52ns)   --->   "%add_ln41 = add i64 %zext_ln41, i64 %weights_read" [conv2d.cpp:41]   --->   Operation 114 'add' 'add_ln41' <Predicate = true> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 115 [1/1] (0.00ns)   --->   "%bitcast_ln41 = bitcast i32 %gmem1_addr_read" [conv2d.cpp:41]   --->   Operation 115 'bitcast' 'bitcast_ln41' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 116 [1/1] (0.00ns)   --->   "%trunc_ln1 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %add_ln41, i32 2, i32 63" [conv2d.cpp:43]   --->   Operation 116 'partselect' 'trunc_ln1' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 117 [1/1] (0.00ns)   --->   "%sext_ln46 = sext i62 %trunc_ln1" [conv2d.cpp:46]   --->   Operation 117 'sext' 'sext_ln46' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 118 [1/1] (3.46ns)   --->   "%add_ln46 = add i63 %sext_ln46, i63 1" [conv2d.cpp:46]   --->   Operation 118 'add' 'add_ln46' <Predicate = true> <Delay = 3.46> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.46> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 119 [1/1] (3.46ns)   --->   "%add_ln46_1 = add i63 %sext_ln46, i63 2" [conv2d.cpp:46]   --->   Operation 119 'add' 'add_ln46_1' <Predicate = true> <Delay = 3.46> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.46> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 120 [1/1] (3.46ns)   --->   "%add_ln46_2 = add i63 %sext_ln46, i63 3" [conv2d.cpp:46]   --->   Operation 120 'add' 'add_ln46_2' <Predicate = true> <Delay = 3.46> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.46> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 121 [1/1] (3.46ns)   --->   "%add_ln46_3 = add i63 %sext_ln46, i63 4" [conv2d.cpp:46]   --->   Operation 121 'add' 'add_ln46_3' <Predicate = true> <Delay = 3.46> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.46> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 122 [1/1] (3.46ns)   --->   "%add_ln46_4 = add i63 %sext_ln46, i63 5" [conv2d.cpp:46]   --->   Operation 122 'add' 'add_ln46_4' <Predicate = true> <Delay = 3.46> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.46> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 123 [1/1] (3.46ns)   --->   "%add_ln46_5 = add i63 %sext_ln46, i63 6" [conv2d.cpp:46]   --->   Operation 123 'add' 'add_ln46_5' <Predicate = true> <Delay = 3.46> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.46> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 124 [1/1] (3.46ns)   --->   "%add_ln46_6 = add i63 %sext_ln46, i63 7" [conv2d.cpp:46]   --->   Operation 124 'add' 'add_ln46_6' <Predicate = true> <Delay = 3.46> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.46> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 125 [1/1] (3.46ns)   --->   "%add_ln46_7 = add i63 %sext_ln46, i63 8" [conv2d.cpp:46]   --->   Operation 125 'add' 'add_ln46_7' <Predicate = true> <Delay = 3.46> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.46> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 126 [2/2] (0.00ns)   --->   "%call_ln43 = call void @conv2d_Pipeline_VITIS_LOOP_38_2_VITIS_LOOP_39_3, i32 %gmem1, i32 %gmem0, i62 %trunc_ln1, i63 %add_ln46, i63 %add_ln46_1, i63 %add_ln46_2, i63 %add_ln46_3, i63 %add_ln46_4, i63 %add_ln46_5, i63 %add_ln46_6, i63 %add_ln46_7, i8 %phi_mul_load, i32 %conv1_out, i32 %conv1_out_1, i64 %input_r_read, i32 %bitcast_ln41" [conv2d.cpp:43]   --->   Operation 126 'call' 'call_ln43' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 13 <SV = 12> <Delay = 0.00>
+ST_13 : Operation 127 [1/1] (0.00ns)   --->   "%speclooptripcount_ln37 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 8, i64 8, i64 8" [conv2d.cpp:37]   --->   Operation 127 'speclooptripcount' 'speclooptripcount_ln37' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 128 [1/1] (0.00ns)   --->   "%specloopname_ln37 = specloopname void @_ssdm_op_SpecLoopName, void @empty_16" [conv2d.cpp:37]   --->   Operation 128 'specloopname' 'specloopname_ln37' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 129 [1/2] (0.00ns)   --->   "%call_ln43 = call void @conv2d_Pipeline_VITIS_LOOP_38_2_VITIS_LOOP_39_3, i32 %gmem1, i32 %gmem0, i62 %trunc_ln1, i63 %add_ln46, i63 %add_ln46_1, i63 %add_ln46_2, i63 %add_ln46_3, i63 %add_ln46_4, i63 %add_ln46_5, i63 %add_ln46_6, i63 %add_ln46_7, i8 %phi_mul_load, i32 %conv1_out, i32 %conv1_out_1, i64 %input_r_read, i32 %bitcast_ln41" [conv2d.cpp:43]   --->   Operation 129 'call' 'call_ln43' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_13 : Operation 130 [1/1] (0.00ns)   --->   "%br_ln37 = br void %VITIS_LOOP_38_2" [conv2d.cpp:37]   --->   Operation 130 'br' 'br_ln37' <Predicate = true> <Delay = 0.00>
+
+State 14 <SV = 2> <Delay = 3.52>
+ST_14 : Operation 131 [1/2] (0.00ns)   --->   "%call_ln0 = call void @conv2d_Pipeline_VITIS_LOOP_60_6_VITIS_LOOP_61_7_VITIS_LOOP_62_8, i32 %conv1_out, i32 %conv1_out_1, i32 %pool1_out"   --->   Operation 131 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_14 : Operation 132 [1/1] (3.52ns)   --->   "%add_ln85 = add i64 %bias_read, i64 32" [conv2d.cpp:85]   --->   Operation 132 'add' 'add_ln85' <Predicate = true> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 133 [1/1] (0.00ns)   --->   "%trunc_ln2 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %add_ln85, i32 2, i32 63" [conv2d.cpp:85]   --->   Operation 133 'partselect' 'trunc_ln2' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 134 [1/1] (0.00ns)   --->   "%sext_ln85 = sext i62 %trunc_ln2" [conv2d.cpp:85]   --->   Operation 134 'sext' 'sext_ln85' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 135 [1/1] (0.00ns)   --->   "%br_ln85 = br void %VITIS_LOOP_86_12" [conv2d.cpp:85]   --->   Operation 135 'br' 'br_ln85' <Predicate = true> <Delay = 0.00>
+
+State 15 <SV = 3> <Delay = 3.52>
+ST_15 : Operation 136 [1/1] (0.00ns)   --->   "%phi_mul182_load = load i8 %phi_mul182" [conv2d.cpp:85]   --->   Operation 136 'load' 'phi_mul182_load' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 137 [1/1] (0.00ns)   --->   "%oc_3 = load i5 %oc_1" [conv2d.cpp:85]   --->   Operation 137 'load' 'oc_3' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 138 [1/1] (1.91ns)   --->   "%add_ln85_2 = add i8 %phi_mul182_load, i8 11" [conv2d.cpp:85]   --->   Operation 138 'add' 'add_ln85_2' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 139 [1/1] (1.78ns)   --->   "%icmp_ln85 = icmp_eq  i5 %oc_3, i5 16" [conv2d.cpp:85]   --->   Operation 139 'icmp' 'icmp_ln85' <Predicate = true> <Delay = 1.78> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 140 [1/1] (1.78ns)   --->   "%add_ln85_1 = add i5 %oc_3, i5 1" [conv2d.cpp:85]   --->   Operation 140 'add' 'add_ln85_1' <Predicate = true> <Delay = 1.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 141 [1/1] (0.00ns)   --->   "%br_ln85 = br i1 %icmp_ln85, void %VITIS_LOOP_86_12.split, void %VITIS_LOOP_122_20.preheader" [conv2d.cpp:85]   --->   Operation 141 'br' 'br_ln85' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 142 [1/1] (0.00ns)   --->   "%zext_ln85 = zext i5 %oc_3" [conv2d.cpp:85]   --->   Operation 142 'zext' 'zext_ln85' <Predicate = (!icmp_ln85)> <Delay = 0.00>
+ST_15 : Operation 143 [1/1] (3.46ns)   --->   "%add_ln89_2 = add i63 %zext_ln85, i63 %sext_ln85" [conv2d.cpp:89]   --->   Operation 143 'add' 'add_ln89_2' <Predicate = (!icmp_ln85)> <Delay = 3.46> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.46> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 144 [1/1] (0.00ns)   --->   "%sext_ln89 = sext i63 %add_ln89_2" [conv2d.cpp:89]   --->   Operation 144 'sext' 'sext_ln89' <Predicate = (!icmp_ln85)> <Delay = 0.00>
+ST_15 : Operation 145 [1/1] (0.00ns)   --->   "%gmem1_addr_9 = getelementptr i32 %gmem1, i64 %sext_ln89" [conv2d.cpp:89]   --->   Operation 145 'getelementptr' 'gmem1_addr_9' <Predicate = (!icmp_ln85)> <Delay = 0.00>
+ST_15 : Operation 146 [1/1] (1.58ns)   --->   "%store_ln85 = store i5 %add_ln85_1, i5 %oc_1" [conv2d.cpp:85]   --->   Operation 146 'store' 'store_ln85' <Predicate = (!icmp_ln85)> <Delay = 1.58>
+ST_15 : Operation 147 [1/1] (1.58ns)   --->   "%store_ln85 = store i8 %add_ln85_2, i8 %phi_mul182" [conv2d.cpp:85]   --->   Operation 147 'store' 'store_ln85' <Predicate = (!icmp_ln85)> <Delay = 1.58>
+ST_15 : Operation 148 [1/1] (0.00ns)   --->   "%phi_mul199 = alloca i32 1"   --->   Operation 148 'alloca' 'phi_mul199' <Predicate = (icmp_ln85)> <Delay = 0.00>
+ST_15 : Operation 149 [1/1] (0.00ns)   --->   "%o = alloca i32 1" [conv2d.cpp:151]   --->   Operation 149 'alloca' 'o' <Predicate = (icmp_ln85)> <Delay = 0.00>
+ST_15 : Operation 150 [2/2] (0.00ns)   --->   "%call_ln0 = call void @conv2d_Pipeline_VITIS_LOOP_116_17_VITIS_LOOP_117_18_VITIS_LOOP_118_19, i32 %conv2_out, i32 %conv2_out_1, i32 %pool2_out"   --->   Operation 150 'call' 'call_ln0' <Predicate = (icmp_ln85)> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_15 : Operation 151 [1/1] (3.52ns)   --->   "%add_ln151_1 = add i64 %bias_read, i64 96" [conv2d.cpp:151]   --->   Operation 151 'add' 'add_ln151_1' <Predicate = (icmp_ln85)> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 152 [1/1] (0.00ns)   --->   "%trunc_ln151_1 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %add_ln151_1, i32 2, i32 63" [conv2d.cpp:151]   --->   Operation 152 'partselect' 'trunc_ln151_1' <Predicate = (icmp_ln85)> <Delay = 0.00>
+ST_15 : Operation 153 [1/1] (0.00ns)   --->   "%trunc_ln151_2 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %output_r_read, i32 2, i32 63" [conv2d.cpp:151]   --->   Operation 153 'partselect' 'trunc_ln151_2' <Predicate = (icmp_ln85)> <Delay = 0.00>
+ST_15 : Operation 154 [1/1] (0.00ns)   --->   "%sext_ln151_1 = sext i62 %trunc_ln151_2" [conv2d.cpp:151]   --->   Operation 154 'sext' 'sext_ln151_1' <Predicate = (icmp_ln85)> <Delay = 0.00>
+ST_15 : Operation 155 [1/1] (0.00ns)   --->   "%gmem2_addr = getelementptr i32 %gmem2, i64 %sext_ln151_1" [conv2d.cpp:151]   --->   Operation 155 'getelementptr' 'gmem2_addr' <Predicate = (icmp_ln85)> <Delay = 0.00>
+ST_15 : Operation 156 [1/1] (1.58ns)   --->   "%store_ln151 = store i4 0, i4 %o" [conv2d.cpp:151]   --->   Operation 156 'store' 'store_ln151' <Predicate = (icmp_ln85)> <Delay = 1.58>
+ST_15 : Operation 157 [1/1] (1.58ns)   --->   "%store_ln0 = store i12 0, i12 %phi_mul199"   --->   Operation 157 'store' 'store_ln0' <Predicate = (icmp_ln85)> <Delay = 1.58>
+
+State 16 <SV = 4> <Delay = 0.00>
+ST_16 : Operation 158 [8/8] (7.30ns)   --->   "%gmem1_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_9, i64 1" [conv2d.cpp:89]   --->   Operation 158 'readreq' 'gmem1_load_1_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 17 <SV = 5> <Delay = 0.00>
+ST_17 : Operation 159 [7/8] (7.30ns)   --->   "%gmem1_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_9, i64 1" [conv2d.cpp:89]   --->   Operation 159 'readreq' 'gmem1_load_1_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 18 <SV = 6> <Delay = 0.00>
+ST_18 : Operation 160 [6/8] (7.30ns)   --->   "%gmem1_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_9, i64 1" [conv2d.cpp:89]   --->   Operation 160 'readreq' 'gmem1_load_1_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 19 <SV = 7> <Delay = 0.00>
+ST_19 : Operation 161 [5/8] (7.30ns)   --->   "%gmem1_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_9, i64 1" [conv2d.cpp:89]   --->   Operation 161 'readreq' 'gmem1_load_1_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 20 <SV = 8> <Delay = 0.00>
+ST_20 : Operation 162 [4/8] (7.30ns)   --->   "%gmem1_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_9, i64 1" [conv2d.cpp:89]   --->   Operation 162 'readreq' 'gmem1_load_1_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 21 <SV = 9> <Delay = 0.00>
+ST_21 : Operation 163 [3/8] (7.30ns)   --->   "%gmem1_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_9, i64 1" [conv2d.cpp:89]   --->   Operation 163 'readreq' 'gmem1_load_1_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 22 <SV = 10> <Delay = 3.81>
+ST_22 : Operation 164 [1/1] (0.00ns)   --->   "%p_shl = bitconcatenate i13 @_ssdm_op_BitConcatenate.i13.i5.i8, i5 %oc_3, i8 0" [conv2d.cpp:89]   --->   Operation 164 'bitconcatenate' 'p_shl' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 165 [1/1] (0.00ns)   --->   "%tmp_7 = bitconcatenate i10 @_ssdm_op_BitConcatenate.i10.i5.i5, i5 %oc_3, i5 0" [conv2d.cpp:89]   --->   Operation 165 'bitconcatenate' 'tmp_7' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 166 [1/1] (0.00ns)   --->   "%zext_ln89 = zext i10 %tmp_7" [conv2d.cpp:89]   --->   Operation 166 'zext' 'zext_ln89' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 167 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln89_3 = add i13 %p_shl, i13 %zext_ln89" [conv2d.cpp:89]   --->   Operation 167 'add' 'add_ln89_3' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.90> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_22 : Operation 168 [1/1] (3.81ns) (root node of TernaryAdder)   --->   "%add_ln89 = add i13 %add_ln89_3, i13 288" [conv2d.cpp:89]   --->   Operation 168 'add' 'add_ln89' <Predicate = true> <Delay = 3.81> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.90> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_22 : Operation 169 [2/8] (7.30ns)   --->   "%gmem1_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_9, i64 1" [conv2d.cpp:89]   --->   Operation 169 'readreq' 'gmem1_load_1_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 23 <SV = 11> <Delay = 7.30>
+ST_23 : Operation 170 [1/1] (0.00ns)   --->   "%zext_ln89_1 = zext i13 %add_ln89" [conv2d.cpp:89]   --->   Operation 170 'zext' 'zext_ln89_1' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 171 [1/1] (3.52ns)   --->   "%add_ln89_1 = add i64 %zext_ln89_1, i64 %weights_read" [conv2d.cpp:89]   --->   Operation 171 'add' 'add_ln89_1' <Predicate = true> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 172 [1/8] ( I:7.30ns O:7.30ns )   --->   "%gmem1_load_1_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_9, i64 1" [conv2d.cpp:89]   --->   Operation 172 'readreq' 'gmem1_load_1_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_23 : Operation 173 [1/1] (0.00ns)   --->   "%trunc_ln7 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %add_ln89_1, i32 2, i32 63" [conv2d.cpp:91]   --->   Operation 173 'partselect' 'trunc_ln7' <Predicate = true> <Delay = 0.00>
+
+State 24 <SV = 12> <Delay = 7.30>
+ST_24 : Operation 174 [1/1] ( I:7.30ns O:7.30ns )   --->   "%gmem1_addr_9_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem1_addr_9" [conv2d.cpp:89]   --->   Operation 174 'read' 'gmem1_addr_9_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 25 <SV = 13> <Delay = 1.58>
+ST_25 : Operation 175 [1/1] (0.00ns)   --->   "%bitcast_ln89 = bitcast i32 %gmem1_addr_9_read" [conv2d.cpp:89]   --->   Operation 175 'bitcast' 'bitcast_ln89' <Predicate = true> <Delay = 0.00>
+ST_25 : Operation 176 [2/2] (1.58ns)   --->   "%call_ln89 = call void @conv2d_Pipeline_VITIS_LOOP_86_12_VITIS_LOOP_87_13_VITIS_LOOP_91_14_VITIS_LOOP_92, i32 %bitcast_ln89, i32 %gmem1, i8 %phi_mul182_load, i32 %pool1_out, i62 %trunc_ln7, i32 %conv2_out, i32 %conv2_out_1" [conv2d.cpp:89]   --->   Operation 176 'call' 'call_ln89' <Predicate = true> <Delay = 1.58> <CoreType = "Generic">   --->   Generic Core
+
+State 26 <SV = 14> <Delay = 0.00>
+ST_26 : Operation 177 [1/1] (0.00ns)   --->   "%speclooptripcount_ln85 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 16, i64 16, i64 16" [conv2d.cpp:85]   --->   Operation 177 'speclooptripcount' 'speclooptripcount_ln85' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 178 [1/1] (0.00ns)   --->   "%specloopname_ln85 = specloopname void @_ssdm_op_SpecLoopName, void @empty_15" [conv2d.cpp:85]   --->   Operation 178 'specloopname' 'specloopname_ln85' <Predicate = true> <Delay = 0.00>
+ST_26 : Operation 179 [1/2] (0.00ns)   --->   "%call_ln89 = call void @conv2d_Pipeline_VITIS_LOOP_86_12_VITIS_LOOP_87_13_VITIS_LOOP_91_14_VITIS_LOOP_92, i32 %bitcast_ln89, i32 %gmem1, i8 %phi_mul182_load, i32 %pool1_out, i62 %trunc_ln7, i32 %conv2_out, i32 %conv2_out_1" [conv2d.cpp:89]   --->   Operation 179 'call' 'call_ln89' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_26 : Operation 180 [1/1] (0.00ns)   --->   "%br_ln85 = br void %VITIS_LOOP_86_12" [conv2d.cpp:85]   --->   Operation 180 'br' 'br_ln85' <Predicate = true> <Delay = 0.00>
+
+State 27 <SV = 4> <Delay = 7.30>
+ST_27 : Operation 181 [1/2] (0.00ns)   --->   "%call_ln0 = call void @conv2d_Pipeline_VITIS_LOOP_116_17_VITIS_LOOP_117_18_VITIS_LOOP_118_19, i32 %conv2_out, i32 %conv2_out_1, i32 %pool2_out"   --->   Operation 181 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_27 : Operation 182 [1/1] ( I:7.30ns O:7.30ns )   --->   "%empty = writereq i1 @_ssdm_op_WriteReq.m_axi.p1i32, i32 %gmem2_addr, i64 10" [conv2d.cpp:151]   --->   Operation 182 'writereq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 9> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 28 <SV = 5> <Delay = 0.00>
+ST_28 : Operation 183 [2/2] (0.00ns)   --->   "%call_ln0 = call void @conv2d_Pipeline_VITIS_LOOP_137_22_VITIS_LOOP_138_23_VITIS_LOOP_139_24, i32 %pool2_out, i32 %fc_in"   --->   Operation 183 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 29 <SV = 6> <Delay = 3.52>
+ST_29 : Operation 184 [1/2] (0.00ns)   --->   "%call_ln0 = call void @conv2d_Pipeline_VITIS_LOOP_137_22_VITIS_LOOP_138_23_VITIS_LOOP_139_24, i32 %pool2_out, i32 %fc_in"   --->   Operation 184 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_29 : Operation 185 [1/1] (3.52ns)   --->   "%add_ln151 = add i64 %weights_read, i64 4896" [conv2d.cpp:151]   --->   Operation 185 'add' 'add_ln151' <Predicate = true> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.52> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 186 [1/1] (0.00ns)   --->   "%trunc_ln3 = partselect i62 @_ssdm_op_PartSelect.i62.i64.i32.i32, i64 %add_ln151, i32 2, i32 63" [conv2d.cpp:151]   --->   Operation 186 'partselect' 'trunc_ln3' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 187 [1/1] (0.00ns)   --->   "%sext_ln151 = sext i62 %trunc_ln151_1" [conv2d.cpp:151]   --->   Operation 187 'sext' 'sext_ln151' <Predicate = true> <Delay = 0.00>
+ST_29 : Operation 188 [1/1] (0.00ns)   --->   "%br_ln151 = br void %VITIS_LOOP_155_26" [conv2d.cpp:151]   --->   Operation 188 'br' 'br_ln151' <Predicate = true> <Delay = 0.00>
+
+State 30 <SV = 7> <Delay = 3.46>
+ST_30 : Operation 189 [1/1] (0.00ns)   --->   "%phi_mul199_load = load i12 %phi_mul199" [conv2d.cpp:151]   --->   Operation 189 'load' 'phi_mul199_load' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 190 [1/1] (0.00ns)   --->   "%o_1 = load i4 %o" [conv2d.cpp:151]   --->   Operation 190 'load' 'o_1' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 191 [1/1] (1.54ns)   --->   "%add_ln151_3 = add i12 %phi_mul199_load, i12 400" [conv2d.cpp:151]   --->   Operation 191 'add' 'add_ln151_3' <Predicate = true> <Delay = 1.54> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.54> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 192 [1/1] (1.73ns)   --->   "%icmp_ln151 = icmp_eq  i4 %o_1, i4 10" [conv2d.cpp:151]   --->   Operation 192 'icmp' 'icmp_ln151' <Predicate = true> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 193 [1/1] (1.73ns)   --->   "%add_ln151_2 = add i4 %o_1, i4 1" [conv2d.cpp:151]   --->   Operation 193 'add' 'add_ln151_2' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 194 [1/1] (0.00ns)   --->   "%br_ln151 = br i1 %icmp_ln151, void %VITIS_LOOP_155_26.split, void %for.end342" [conv2d.cpp:151]   --->   Operation 194 'br' 'br_ln151' <Predicate = true> <Delay = 0.00>
+ST_30 : Operation 195 [1/1] (0.00ns)   --->   "%zext_ln151 = zext i4 %o_1" [conv2d.cpp:151]   --->   Operation 195 'zext' 'zext_ln151' <Predicate = (!icmp_ln151)> <Delay = 0.00>
+ST_30 : Operation 196 [1/1] (3.46ns)   --->   "%add_ln153 = add i63 %zext_ln151, i63 %sext_ln151" [conv2d.cpp:153]   --->   Operation 196 'add' 'add_ln153' <Predicate = (!icmp_ln151)> <Delay = 3.46> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 3.46> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 197 [1/1] (0.00ns)   --->   "%sext_ln153 = sext i63 %add_ln153" [conv2d.cpp:153]   --->   Operation 197 'sext' 'sext_ln153' <Predicate = (!icmp_ln151)> <Delay = 0.00>
+ST_30 : Operation 198 [1/1] (0.00ns)   --->   "%gmem1_addr_10 = getelementptr i32 %gmem1, i64 %sext_ln153" [conv2d.cpp:153]   --->   Operation 198 'getelementptr' 'gmem1_addr_10' <Predicate = (!icmp_ln151)> <Delay = 0.00>
+ST_30 : Operation 199 [1/1] (1.58ns)   --->   "%store_ln151 = store i4 %add_ln151_2, i4 %o" [conv2d.cpp:151]   --->   Operation 199 'store' 'store_ln151' <Predicate = (!icmp_ln151)> <Delay = 1.58>
+ST_30 : Operation 200 [1/1] (1.58ns)   --->   "%store_ln151 = store i12 %add_ln151_3, i12 %phi_mul199" [conv2d.cpp:151]   --->   Operation 200 'store' 'store_ln151' <Predicate = (!icmp_ln151)> <Delay = 1.58>
+
+State 31 <SV = 8> <Delay = 0.00>
+ST_31 : Operation 201 [8/8] (7.30ns)   --->   "%gmem1_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_10, i64 1" [conv2d.cpp:153]   --->   Operation 201 'readreq' 'gmem1_load_11_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 32 <SV = 9> <Delay = 0.00>
+ST_32 : Operation 202 [7/8] (7.30ns)   --->   "%gmem1_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_10, i64 1" [conv2d.cpp:153]   --->   Operation 202 'readreq' 'gmem1_load_11_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 33 <SV = 10> <Delay = 0.00>
+ST_33 : Operation 203 [6/8] (7.30ns)   --->   "%gmem1_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_10, i64 1" [conv2d.cpp:153]   --->   Operation 203 'readreq' 'gmem1_load_11_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 34 <SV = 11> <Delay = 0.00>
+ST_34 : Operation 204 [5/8] (7.30ns)   --->   "%gmem1_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_10, i64 1" [conv2d.cpp:153]   --->   Operation 204 'readreq' 'gmem1_load_11_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 35 <SV = 12> <Delay = 0.00>
+ST_35 : Operation 205 [4/8] (7.30ns)   --->   "%gmem1_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_10, i64 1" [conv2d.cpp:153]   --->   Operation 205 'readreq' 'gmem1_load_11_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 36 <SV = 13> <Delay = 0.00>
+ST_36 : Operation 206 [3/8] (7.30ns)   --->   "%gmem1_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_10, i64 1" [conv2d.cpp:153]   --->   Operation 206 'readreq' 'gmem1_load_11_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 37 <SV = 14> <Delay = 0.00>
+ST_37 : Operation 207 [2/8] (7.30ns)   --->   "%gmem1_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_10, i64 1" [conv2d.cpp:153]   --->   Operation 207 'readreq' 'gmem1_load_11_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 38 <SV = 15> <Delay = 7.30>
+ST_38 : Operation 208 [1/8] ( I:7.30ns O:7.30ns )   --->   "%gmem1_load_11_req = readreq i1 @_ssdm_op_ReadReq.m_axi.i32P1A, i32 %gmem1_addr_10, i64 1" [conv2d.cpp:153]   --->   Operation 208 'readreq' 'gmem1_load_11_req' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 6> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 39 <SV = 16> <Delay = 7.30>
+ST_39 : Operation 209 [1/1] ( I:7.30ns O:7.30ns )   --->   "%gmem1_addr_10_read = read i32 @_ssdm_op_Read.m_axi.i32P1A, i32 %gmem1_addr_10" [conv2d.cpp:153]   --->   Operation 209 'read' 'gmem1_addr_10_read' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 40 <SV = 17> <Delay = 5.28>
+ST_40 : Operation 210 [1/1] (0.00ns)   --->   "%sum = bitcast i32 %gmem1_addr_10_read" [conv2d.cpp:153]   --->   Operation 210 'bitcast' 'sum' <Predicate = true> <Delay = 0.00>
+ST_40 : Operation 211 [2/2] (5.28ns)   --->   "%call_ln153 = call void @conv2d_Pipeline_VITIS_LOOP_155_26, i32 %sum, i32 %gmem1, i32 %fc_in, i62 %trunc_ln3, i12 %phi_mul199_load, i32 %sum_15_loc" [conv2d.cpp:153]   --->   Operation 211 'call' 'call_ln153' <Predicate = true> <Delay = 5.28> <CoreType = "Generic">   --->   Generic Core
+
+State 41 <SV = 18> <Delay = 0.00>
+ST_41 : Operation 212 [1/2] (0.00ns)   --->   "%call_ln153 = call void @conv2d_Pipeline_VITIS_LOOP_155_26, i32 %sum, i32 %gmem1, i32 %fc_in, i62 %trunc_ln3, i12 %phi_mul199_load, i32 %sum_15_loc" [conv2d.cpp:153]   --->   Operation 212 'call' 'call_ln153' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 42 <SV = 19> <Delay = 7.30>
+ST_42 : Operation 213 [1/1] (0.00ns)   --->   "%speclooptripcount_ln151 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 10, i64 10, i64 10" [conv2d.cpp:151]   --->   Operation 213 'speclooptripcount' 'speclooptripcount_ln151' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 214 [1/1] (0.00ns)   --->   "%specloopname_ln151 = specloopname void @_ssdm_op_SpecLoopName, void @empty_13" [conv2d.cpp:151]   --->   Operation 214 'specloopname' 'specloopname_ln151' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 215 [1/1] (0.00ns)   --->   "%sum_15_loc_load = load i32 %sum_15_loc"   --->   Operation 215 'load' 'sum_15_loc_load' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 216 [1/1] (0.00ns)   --->   "%bitcast_ln158 = bitcast i32 %sum_15_loc_load" [conv2d.cpp:158]   --->   Operation 216 'bitcast' 'bitcast_ln158' <Predicate = true> <Delay = 0.00>
+ST_42 : Operation 217 [1/1] ( I:7.30ns O:7.30ns )   --->   "%write_ln158 = write void @_ssdm_op_Write.m_axi.p1i32.i32, i32 %gmem2_addr, i32 %bitcast_ln158, i4 15" [conv2d.cpp:158]   --->   Operation 217 'write' 'write_ln158' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 5> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_42 : Operation 218 [1/1] (0.00ns)   --->   "%br_ln151 = br void %VITIS_LOOP_155_26" [conv2d.cpp:151]   --->   Operation 218 'br' 'br_ln151' <Predicate = true> <Delay = 0.00>
+
+State 43 <SV = 8> <Delay = 0.00>
+ST_43 : Operation 219 [5/5] (7.30ns)   --->   "%empty_35 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem2_addr" [conv2d.cpp:160]   --->   Operation 219 'writeresp' 'empty_35' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 44 <SV = 9> <Delay = 0.00>
+ST_44 : Operation 220 [4/5] (7.30ns)   --->   "%empty_35 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem2_addr" [conv2d.cpp:160]   --->   Operation 220 'writeresp' 'empty_35' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 45 <SV = 10> <Delay = 0.00>
+ST_45 : Operation 221 [3/5] (7.30ns)   --->   "%empty_35 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem2_addr" [conv2d.cpp:160]   --->   Operation 221 'writeresp' 'empty_35' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 46 <SV = 11> <Delay = 0.00>
+ST_46 : Operation 222 [2/5] (7.30ns)   --->   "%empty_35 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem2_addr" [conv2d.cpp:160]   --->   Operation 222 'writeresp' 'empty_35' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 47 <SV = 12> <Delay = 7.30>
+ST_47 : Operation 223 [1/5] ( I:7.30ns O:7.30ns )   --->   "%empty_35 = writeresp i1 @_ssdm_op_WriteResp.m_axi.p1i32, i32 %gmem2_addr" [conv2d.cpp:160]   --->   Operation 223 'writeresp' 'empty_35' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 111 'm_axi' <Latency = 3> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'readrequnaligned' 'writerequnaligned' 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_47 : Operation 224 [1/1] (0.00ns)   --->   "%ret_ln160 = ret" [conv2d.cpp:160]   --->   Operation 224 'ret' 'ret_ln160' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 1.588ns
+The critical path consists of the following:
+	'alloca' operation 4 bit ('oc', conv2d.cpp:37) [9]  (0.000 ns)
+	'store' operation ('store_ln37', conv2d.cpp:37) of constant 0 4 bit on local variable 'oc', conv2d.cpp:37 [40]  (1.588 ns)
+
+ <State 2>: 3.503ns
+The critical path consists of the following:
+	'load' operation 8 bit ('phi_mul_load', conv2d.cpp:37) on local variable 'phi_mul' [44]  (0.000 ns)
+	'add' operation 8 bit ('add_ln37_1', conv2d.cpp:37) [46]  (1.915 ns)
+	'store' operation ('store_ln37', conv2d.cpp:37) of variable 'add_ln37_1', conv2d.cpp:37 8 bit on local variable 'phi_mul' [78]  (1.588 ns)
+
+ <State 3>: 0.000ns
+The critical path consists of the following:
+
+ <State 4>: 0.000ns
+The critical path consists of the following:
+
+ <State 5>: 0.000ns
+The critical path consists of the following:
+
+ <State 6>: 0.000ns
+The critical path consists of the following:
+
+ <State 7>: 0.000ns
+The critical path consists of the following:
+
+ <State 8>: 0.000ns
+The critical path consists of the following:
+
+ <State 9>: 0.000ns
+The critical path consists of the following:
+
+ <State 10>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('gmem1_load_req', conv2d.cpp:41) on port 'gmem1' (conv2d.cpp:41) [63]  (7.300 ns)
+
+ <State 11>: 7.300ns
+The critical path consists of the following:
+	bus read operation ('gmem1_addr_read', conv2d.cpp:41) on port 'gmem1' (conv2d.cpp:41) [64]  (7.300 ns)
+
+ <State 12>: 6.989ns
+The critical path consists of the following:
+	'add' operation 64 bit ('add_ln41', conv2d.cpp:41) [59]  (3.520 ns)
+	'add' operation 63 bit ('add_ln46', conv2d.cpp:46) [68]  (3.469 ns)
+
+ <State 13>: 0.000ns
+The critical path consists of the following:
+
+ <State 14>: 3.520ns
+The critical path consists of the following:
+	'add' operation 64 bit ('add_ln85', conv2d.cpp:85) [84]  (3.520 ns)
+
+ <State 15>: 3.520ns
+The critical path consists of the following:
+	'add' operation 64 bit ('add_ln151_1', conv2d.cpp:151) [126]  (3.520 ns)
+
+ <State 16>: 0.000ns
+The critical path consists of the following:
+
+ <State 17>: 0.000ns
+The critical path consists of the following:
+
+ <State 18>: 0.000ns
+The critical path consists of the following:
+
+ <State 19>: 0.000ns
+The critical path consists of the following:
+
+ <State 20>: 0.000ns
+The critical path consists of the following:
+
+ <State 21>: 0.000ns
+The critical path consists of the following:
+
+ <State 22>: 3.815ns
+The critical path consists of the following:
+	'add' operation 13 bit ('add_ln89_3', conv2d.cpp:89) [104]  (0.000 ns)
+	'add' operation 13 bit ('add_ln89', conv2d.cpp:89) [105]  (3.815 ns)
+
+ <State 23>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('gmem1_load_1_req', conv2d.cpp:89) on port 'gmem1' (conv2d.cpp:89) [111]  (7.300 ns)
+
+ <State 24>: 7.300ns
+The critical path consists of the following:
+	bus read operation ('gmem1_addr_9_read', conv2d.cpp:89) on port 'gmem1' (conv2d.cpp:89) [112]  (7.300 ns)
+
+ <State 25>: 1.588ns
+The critical path consists of the following:
+	'call' operation ('call_ln89', conv2d.cpp:89) to 'conv2d_Pipeline_VITIS_LOOP_86_12_VITIS_LOOP_87_13_VITIS_LOOP_91_14_VITIS_LOOP_92' [115]  (1.588 ns)
+
+ <State 26>: 0.000ns
+The critical path consists of the following:
+
+ <State 27>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('empty', conv2d.cpp:151) on port 'gmem2' (conv2d.cpp:151) [132]  (7.300 ns)
+
+ <State 28>: 0.000ns
+The critical path consists of the following:
+
+ <State 29>: 3.520ns
+The critical path consists of the following:
+	'add' operation 64 bit ('add_ln151', conv2d.cpp:151) [124]  (3.520 ns)
+
+ <State 30>: 3.469ns
+The critical path consists of the following:
+	'load' operation 4 bit ('o', conv2d.cpp:151) on local variable 'o', conv2d.cpp:151 [138]  (0.000 ns)
+	'add' operation 63 bit ('add_ln153', conv2d.cpp:153) [147]  (3.469 ns)
+
+ <State 31>: 0.000ns
+The critical path consists of the following:
+
+ <State 32>: 0.000ns
+The critical path consists of the following:
+
+ <State 33>: 0.000ns
+The critical path consists of the following:
+
+ <State 34>: 0.000ns
+The critical path consists of the following:
+
+ <State 35>: 0.000ns
+The critical path consists of the following:
+
+ <State 36>: 0.000ns
+The critical path consists of the following:
+
+ <State 37>: 0.000ns
+The critical path consists of the following:
+
+ <State 38>: 7.300ns
+The critical path consists of the following:
+	bus request operation ('gmem1_load_11_req', conv2d.cpp:153) on port 'gmem1' (conv2d.cpp:153) [150]  (7.300 ns)
+
+ <State 39>: 7.300ns
+The critical path consists of the following:
+	bus read operation ('gmem1_addr_10_read', conv2d.cpp:153) on port 'gmem1' (conv2d.cpp:153) [151]  (7.300 ns)
+
+ <State 40>: 5.282ns
+The critical path consists of the following:
+	'call' operation ('call_ln153', conv2d.cpp:153) to 'conv2d_Pipeline_VITIS_LOOP_155_26' [153]  (5.282 ns)
+
+ <State 41>: 0.000ns
+The critical path consists of the following:
+
+ <State 42>: 7.300ns
+The critical path consists of the following:
+	'load' operation 32 bit ('sum_15_loc_load') on local variable 'sum_15_loc' [154]  (0.000 ns)
+	bus write operation ('write_ln158', conv2d.cpp:158) on port 'gmem2' (conv2d.cpp:158) [156]  (7.300 ns)
+
+ <State 43>: 0.000ns
+The critical path consists of the following:
+
+ <State 44>: 0.000ns
+The critical path consists of the following:
+
+ <State 45>: 0.000ns
+The critical path consists of the following:
+
+ <State 46>: 0.000ns
+The critical path consists of the following:
+
+ <State 47>: 7.300ns
+The critical path consists of the following:
+	bus response operation ('empty_35', conv2d.cpp:160) on port 'gmem2' (conv2d.cpp:160) [161]  (7.300 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

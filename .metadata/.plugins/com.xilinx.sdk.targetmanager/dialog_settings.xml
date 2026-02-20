@@ -6,6 +6,12 @@
 	<item key="mnist_cnn_system-device" value="Digilent Zed 210248650087/3-xc7z020"/>
 	<item key="mnist_cnn_system-partial_bit" value="false"/>
 	<item key="mnist_cnn_system-skip_rev_check" value="false"/>
-	<item key="programfpga.sdxproject" value="mnist_cnn_system"/>
+	<item key="programfpga.sdxproject" value="cnn_fpga_test_v3_system"/>
 	<item key="devices_info_Local" value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zed 210248650087&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zed-210248650087-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zed-210248650087-23727093-0&quot;}}]}"/>
+	<item key="cnn_fpga_test_v3_system-bitFile" value="${project_loc:cnn_fpga_test_v3}/_ide/bitstream/system_wrapper.bit"/>
+	<item key="cnn_fpga_test_v3_system-bmmFile" value=""/>
+	<item key="cnn_fpga_test_v3_system-target" value="Local"/>
+	<item key="cnn_fpga_test_v3_system-device" value="Auto Detect"/>
+	<item key="cnn_fpga_test_v3_system-partial_bit" value="false"/>
+	<item key="cnn_fpga_test_v3_system-skip_rev_check" value="false"/>
 </section>

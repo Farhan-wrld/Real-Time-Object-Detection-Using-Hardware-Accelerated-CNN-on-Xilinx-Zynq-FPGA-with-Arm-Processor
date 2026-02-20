@@ -1,0 +1,192 @@
+================================================================
+== Vivado Place & Route Results
+================================================================
++ General Information:
+    * Date:            Fri Feb 13 15:10:36 +0530 2026
+    * Version:         2025.2 (Build 6295257 on Nov 14 2025)
+    * Project:         hls_component
+    * Solution:        hls (Vivado IP Flow Target)
+    * Product family:  zynq
+    * Target device:   xc7z020-clg484-1
+
+
+================================================================
+== Run Constraints & Options
+================================================================
++ Design Constraints & Options:
+    * Place & Route target clock:  10 ns
+    * C-Synthesis uncertainty:     27%
+
++ RTL Synthesis Options:
+    * config_export -vivado_synth_strategy:     default
+    * config_export -vivado_synth_design_args:  -directive sdx_optimization_effort_high
+
++ Place & Route Options:
+    * config_export -vivado_impl_strategy:  default
+    * config_export -vivado_phys_opt:       auto
+
++ Reporting Options:
+    * config_export -vivado_report_level:      2
+    * config_export -vivado_max_timing_paths:  10
+
+
+================================================================
+== Place & Route Resource Summary
+================================================================
+LUT:              2900
+FF:               5343
+DSP:              5
+BRAM:             8
+URAM:             0
+SRL:              214
+
+
+================================================================
+== Place & Route Timing Summary
+================================================================
+* Timing was met
++----------------+-------------+
+| Timing         | Period (ns) |
++----------------+-------------+
+| Target         | 10.000      |
+| Post-Synthesis | 8.276       |
+| Post-Route     | 8.896       |
++----------------+-------------+
+
+
+================================================================
+== Place & Route Resources
+================================================================
++------------------------------------------------------------------+-----+----+-----+------+------+-----+--------+------+---------+----------+--------+
+| Name                                                             | LUT | FF | DSP | BRAM | URAM | SRL | Pragma | Impl | Latency | Variable | Source |
++------------------------------------------------------------------+-----+----+-----+------+------+-----+--------+------+---------+----------+--------+
+| inst                                                             |     |    |     |      |      | 214 |        |      |         |          |        |
+|   (inst)                                                         |     |    |     |      |      | 2   |        |      |         |          |        |
+|   control_s_axi_U                                                |     |    |     |      |      |     |        |      |         |          |        |
+|   gmem0_m_axi_U                                                  |     |    |     |      |      | 35  |        |      |         |          |        |
+|   gmem1_m_axi_U                                                  |     |    |     |      |      | 34  |        |      |         |          |        |
+|   gmem2_m_axi_U                                                  |     |    |     |      |      | 110 |        |      |         |          |        |
+|   grp_conv2d_Pipeline_VITIS_LOOP_24_2_VITIS_LOOP_25_3_fu_217     |     |    |     |      |      |     |        |      |         |          |        |
+|     (grp_conv2d_Pipeline_VITIS_LOOP_24_2_VITIS_LOOP_25_3_fu_217) |     |    |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                     |     |    |     |      |      |     |        |      |         |          |        |
+|   grp_conv2d_Pipeline_VITIS_LOOP_35_5_fu_227                     |     |    |     |      |      |     |        |      |         |          |        |
+|     (grp_conv2d_Pipeline_VITIS_LOOP_35_5_fu_227)                 |     |    |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                     |     |    |     |      |      |     |        |      |         |          |        |
+|   grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237                     |     |    |     |      |      | 33  |        |      |         |          |        |
+|     (grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237)                 |     |    |     |      |      | 33  |        |      |         |          |        |
+|     fadd_32ns_32ns_32_5_full_dsp_1_U11                           |     |    |     |      |      |     |        |      |         |          |        |
+|       (fadd_32ns_32ns_32_5_full_dsp_1_U11)                       |     |    |     |      |      |     |        |      |         |          |        |
+|     flow_control_loop_pipe_sequential_init_U                     |     |    |     |      |      |     |        |      |         |          |        |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U12                            |     |    |     |      |      |     |        |      |         |          |        |
+|       (fmul_32ns_32ns_32_4_max_dsp_1_U12)                        |     |    |     |      |      |     |        |      |         |          |        |
+|   linebuf_1_U                                                    |     |    |     |      |      |     |        |      |         |          |        |
+|   linebuf_2_U                                                    |     |    |     |      |      |     |        |      |         |          |        |
+|   linebuf_U                                                      |     |    |     |      |      |     |        |      |         |          |        |
++------------------------------------------------------------------+-----+----+-----+------+------+-----+--------+------+---------+----------+--------+
+
+
+================================================================
+== Place & Route Fail Fast
+================================================================
++-----------------------------------------------------------+-----------+--------+--------+
+| Criteria                                                  | Guideline | Actual | Status |
++-----------------------------------------------------------+-----------+--------+--------+
+| LUT                                                       | 70%       | 5.45%  | OK     |
+| FD                                                        | 50%       | 5.02%  | OK     |
+| LUTRAM+SRL                                                | 25%       | 1.23%  | OK     |
+| MUXF7                                                     | 15%       | 0.02%  | OK     |
+| DSP                                                       | 80%       | 2.27%  | OK     |
+| RAMB/FIFO                                                 | 80%       | 2.86%  | OK     |
+| DSP+RAMB+URAM (Avg)                                       | 70%       | 2.56%  | OK     |
+| BUFGCE* + BUFGCTRL                                        | 24        | 0      | OK     |
+| DONT_TOUCH (cells/nets)                                   | 0         | 6      | REVIEW |
+| MARK_DEBUG (nets)                                         | 0         | 0      | OK     |
+| Control Sets                                              | 998       | 163    | OK     |
+| Average Fanout for modules > 100k cells                   | 4         | 2.79   | OK     |
+| Max Average Fanout for modules > 100k cells               | 4         | 0      | OK     |
+| Non-FD high fanout nets > 10k loads                       | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| TIMING-6 (No common primary clock between related clocks) | 0         | 0      | OK     |
+| TIMING-7 (No common node between related clocks)          | 0         | 0      | OK     |
+| TIMING-8 (No common period between related clocks)        | 0         | 0      | OK     |
+| TIMING-14 (LUT on the clock tree)                         | 0         | 0      | OK     |
+| TIMING-35 (No common node in paths with the same clock)   | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+| Number of paths above max LUT budgeting (0.575ns)         | 0         | 0      | OK     |
+| Number of paths above max Net budgeting (0.403ns)         | 0         | 0      | OK     |
++-----------------------------------------------------------+-----------+--------+--------+
+
+
+================================================================
+== Place & Route Timing Paths
+================================================================
+* Timing was met
++-------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+---------------------+---------------------+---------------------+
+| Path  |               SLACK | STARTPOINT PIN                                                                                                                                                                                                                                           | ENDPOINT PIN                                                                                                                                                                                                                     | LOGIC LEVELS | MAX FANOUT |      DATAPATH DELAY |      DATAPATH LOGIC |        DATAPATH NET |
+|       |                     |                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                  |              |            |                     |               DELAY |               DELAY |
++-------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+---------------------+---------------------+---------------------+
+| Path1 | 1.10412299633026123 | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/BMA_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]/C                          | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/INMODE[2] |            1 |         18 | 3.25487136840820312 | 0.58000004291534424 | 2.67487120628356934 |
+| Path2 | 1.32080352306365967 | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/D[2]      |            1 |         54 | 3.25319099426269531 | 0.58000004291534424 | 2.67319107055664062 |
+| Path3 | 1.38582837581634521 | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[9]      |            1 |         54 | 3.05616641044616699 | 0.58000004291534424 | 2.47616624832153320 |
+| Path4 | 1.38706421852111816 | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/BMA_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]/C                          | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/INMODE[1] |            1 |         18 | 2.97193026542663574 | 0.58000004291534424 | 2.39193010330200195 |
+| Path5 | 1.40122044086456299 | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD/C | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP/A[5]      |            1 |         54 | 3.04077434539794922 | 0.58000004291534424 | 2.46077442169189453 |
++-------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+------------+---------------------+---------------------+---------------------+
+
+    +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+    | Path1 Cells                                                                                                                                                                                                                           | Primitive Type       |
+    +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/BMA_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]         | FLOP_LATCH.flop.FDRE |
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/BMA_EXP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_64 | LUT.others.LUT6      |
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP                | MULT.dsp.DSP48E1     |
+    +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+    | Path2 Cells                                                                                                                                                                                                                                            | Primitive Type       |
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD | FLOP_LATCH.flop.FDRE |
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_24                                      | LUT.others.LUT3      |
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP                                 | MULT.dsp.DSP48E1     |
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+    | Path3 Cells                                                                                                                                                                                                                                            | Primitive Type       |
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD | FLOP_LATCH.flop.FDRE |
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_31                                      | LUT.others.LUT3      |
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP                                 | MULT.dsp.DSP48E1     |
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+
+    +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+    | Path4 Cells                                                                                                                                                                                                                           | Primitive Type       |
+    +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/BMA_EXP_DELAY/i_pipe/opt_has_pipe.first_q_reg[5]         | FLOP_LATCH.flop.FDRE |
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/BMA_EXP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_64 | LUT.others.LUT6      |
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP                | MULT.dsp.DSP48E1     |
+    +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+    | Path5 Cells                                                                                                                                                                                                                                            | Primitive Type       |
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.EXP/NUMB_CMP/NOT_FAST.CMP/C_CHAIN/CHAIN_GEN[15].CARRYS_DEL.NEED_DEL.CARRYS_FD | FLOP_LATCH.flop.FDRE |
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/A_IP_DELAY/i_pipe/i_no_versal_es1_workaround.DSP_i_35                                      | LUT.others.LUT3      |
+    | grp_conv2d_Pipeline_VITIS_LOOP_43_6_fu_237/fadd_32ns_32ns_32_5_full_dsp_1_U11/conv2d_fadd_32ns_32ns_32_5_full_dsp_1_ip_u/U0/i_synth/ADDSUB_OP.ADDSUB/DSP.OP/DSP48E1_BODY.ALIGN_ADD/DSP2/i_no_versal_es1_workaround.DSP                                 | MULT.dsp.DSP48E1     |
+    +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+
+
+
+================================================================
+== Place & Route Vivado Reports
+================================================================
++--------------------------+----------------------------------------------------------------+
+| Report Type              | Report Location                                                |
++--------------------------+----------------------------------------------------------------+
+| design_analysis          | impl/verilog/report/conv2d_design_analysis_routed.rpt          |
+| failfast                 | impl/verilog/report/conv2d_failfast_routed.rpt                 |
+| power                    | impl/verilog/report/conv2d_power_routed.rpt                    |
+| status                   | impl/verilog/report/conv2d_status_routed.rpt                   |
+| timing                   | impl/verilog/report/conv2d_timing_routed.rpt                   |
+| timing_paths             | impl/verilog/report/conv2d_timing_paths_routed.rpt             |
+| utilization              | impl/verilog/report/conv2d_utilization_routed.rpt              |
+| utilization_hierarchical | impl/verilog/report/conv2d_utilization_hierarchical_routed.rpt |
++--------------------------+----------------------------------------------------------------+
+
+

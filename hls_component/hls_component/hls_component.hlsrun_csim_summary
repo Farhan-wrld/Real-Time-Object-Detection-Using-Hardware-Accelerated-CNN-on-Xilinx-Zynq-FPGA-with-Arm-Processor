@@ -1,0 +1,159 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\Admin\\Desktop\\Bharat_ARM_Challenge\\hls_component\\hls_component\\hls_component.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "02/17/26 12:06:55",
+ "timestampMillis": "1771310215128",
+ "buildStep": {
+  "cmdId": "e903b7fe-e047-48d6-bf5c-32ef817b0290",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\Admin\\Desktop\\Bharat_ARM_Challenge\\hls_component\\hls_component\\logs\\hls_component.steps.log",
+  "commandLine": "C:/AMDDesignTools/2025.2/Vitis/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config C:\\Users\\Admin\\Desktop\\Bharat_ARM_Challenge\\hls_component\\hls_config.cfg --work_dir hls_component ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "C:\\Users\\Admin\\Desktop\\Bharat_ARM_Challenge\\hls_component\\hls_config.cfg",
+   "--work_dir",
+   "hls_component"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\Admin\\Desktop\\Bharat_ARM_Challenge\\hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "02/17/26 12:06:55",
+ "timestampMillis": "1771310215132",
+ "status": {
+  "cmdId": "e903b7fe-e047-48d6-bf5c-32ef817b0290",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "02/17/26 12:07:18",
+ "timestampMillis": "1771310238205",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "conv2d",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\Admin\\Desktop\\Bharat_ARM_Challenge\\hls_component\\conv2d.cpp",
+     "C:/Users\\Admin\\Downloads\\conv1_weights.h",
+     "C:/Users\\Admin\\Downloads\\test_image.h",
+     "C:/Users\\Admin\\Downloads\\conv2_weights.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "02/17/26 12:07:18",
+ "timestampMillis": "1771310238208",
+ "buildStep": {
+  "cmdId": "f0aa9201-746f-4417-82d1-3dd476f6ab46",
+  "name": "",
+  "logFile": "C:/Users\\Admin\\Desktop\\Bharat_ARM_Challenge\\hls_component\\hls_component\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\Admin\\Desktop\\Bharat_ARM_Challenge\\hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "02/17/26 12:07:18",
+ "timestampMillis": "1771310238209",
+ "status": {
+  "cmdId": "f0aa9201-746f-4417-82d1-3dd476f6ab46",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "02/17/26 12:07:22",
+ "timestampMillis": "1771310242137",
+ "status": {
+  "cmdId": "f0aa9201-746f-4417-82d1-3dd476f6ab46",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "02/17/26 12:07:22",
+ "timestampMillis": "1771310242425",
+ "status": {
+  "cmdId": "e903b7fe-e047-48d6-bf5c-32ef817b0290",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "02/17/26 12:07:22",
+ "timestampMillis": "1771310242432",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "02/17/26 12:07:22",
+ "timestampMillis": "1771310242435",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

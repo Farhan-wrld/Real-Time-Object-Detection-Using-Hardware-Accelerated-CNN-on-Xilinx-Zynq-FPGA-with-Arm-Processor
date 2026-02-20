@@ -1,0 +1,16 @@
+# Inferred from syn.compile.pipeline_loops=64
+set_directive_pipeline conv2d/VITIS_LOOP_39_3
+set_directive_pipeline conv2d/VITIS_LOOP_62_8
+set_directive_pipeline conv2d/VITIS_LOOP_93_16
+set_directive_pipeline conv2d/VITIS_LOOP_118_19
+set_directive_pipeline conv2d/VITIS_LOOP_139_24
+set_directive_pipeline conv2d/VITIS_LOOP_155_26
+# Inferred from Performance Budgeter performance directives
+set_directive_loop_flatten conv2d/VITIS_LOOP_61_7
+set_directive_loop_flatten conv2d/VITIS_LOOP_60_6
+set_directive_loop_flatten conv2d/VITIS_LOOP_92_15
+set_directive_loop_flatten conv2d/VITIS_LOOP_91_14
+set_directive_loop_flatten conv2d/VITIS_LOOP_87_13
+set_directive_loop_flatten conv2d/VITIS_LOOP_86_12
+set_directive_loop_flatten conv2d/VITIS_LOOP_117_18
+set_directive_loop_flatten conv2d/VITIS_LOOP_116_17

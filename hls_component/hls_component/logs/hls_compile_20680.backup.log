@@ -1,0 +1,134 @@
+  **** HLS Build v2025.2 6295257
+INFO: [HLS 200-2005] Using work_dir C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component 
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/vitis-comp.json
+INFO: [HLS 200-10] Creating and opening component 'C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component'.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-2174] Applying component config ini file hls_config.cfg
+INFO: [HLS 200-1465] Applying config ini 'syn.file=conv2d.cpp' from hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/conv2d.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'tb.file=conv2d_tb.cpp' from hls_config.cfg(8)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/conv2d_tb.cpp' to the project
+INFO: [HLS 200-1465] Applying config ini 'syn.top=conv2d' from hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying config ini 'flow_target=vivado' from hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.amd.com/access/sources/dita/topic?Doc_Version=2025.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying config ini 'part=xc7z020clg484-1' from hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1465] Applying config ini 'package.output.format=ip_catalog' from hls_config.cfg(5)
+INFO: [HLS 200-2176] Writing Vitis IDE component file C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/vitis-comp.json
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 2 seconds. Elapsed time: 4.061 seconds; current allocated memory: 135.312 MB.
+INFO: [HLS 200-2191] C-Synthesis will use clang-16 as the compiler
+INFO: [HLS 200-10] Analyzing design file 'conv2d.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.682 seconds; current allocated memory: 137.301 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 93 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 111 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 88 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 84 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 84 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 88 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 88 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 88 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 88 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 96 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 96 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 96 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 96 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 96 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 152 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 200-1995] There were 155 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details (C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/report/csynth_design_size.rpt:2)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_21_4' is marked as complete unroll implied by the pipeline pragma (conv2d.cpp:21:34)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_22_5' is marked as complete unroll implied by the pipeline pragma (conv2d.cpp:22:38)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_23_6' is marked as complete unroll implied by the pipeline pragma (conv2d.cpp:23:42)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_21_4' (conv2d.cpp:21:34) in function 'conv2d' completely with a factor of 1 (conv2d.cpp:6:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_22_5' (conv2d.cpp:22:38) in function 'conv2d' completely with a factor of 3 (conv2d.cpp:6:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_23_6' (conv2d.cpp:23:42) in function 'conv2d' completely with a factor of 3 (conv2d.cpp:6:0)
+INFO: [HLS 214-437] Disabling loop flattening for loop 'VITIS_LOOP_14_1'. (conv2d.cpp:14:22)
+INFO: [HLS 214-115] Multiple burst writes of length 5408 and bit width 32 in loop 'VITIS_LOOP_14_1'(conv2d.cpp:14:22) has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (conv2d.cpp:14:22)
+INFO: [HLS 214-115] Multiple burst reads of length 3 and bit width 32 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (conv2d.cpp:24:36)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 11.858 seconds; current allocated memory: 139.730 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.008 seconds; current allocated memory: 139.730 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.127 seconds; current allocated memory: 144.102 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.054 seconds; current allocated memory: 145.609 MB.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv2d' (conv2d.cpp:1:30)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.188 seconds; current allocated memory: 166.820 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_15_2'(conv2d.cpp:15:26) and 'VITIS_LOOP_16_3'(conv2d.cpp:16:30) in function 'conv2d' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_15_2' (conv2d.cpp:15:26) in function 'conv2d'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.227 seconds; current allocated memory: 170.633 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv2d' ...
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_15_2_VITIS_LOOP_16_3'.
+WARNING: [HLS 200-448] Lower bound of II is 9 due to multiple bus read operation ('gmem_addr_1_read', conv2d.cpp:24) on port 'gmem' (conv2d.cpp:24), bus read operation ('gmem_addr_2_read', conv2d.cpp:24) on port 'gmem' (conv2d.cpp:24), bus read operation ('gmem_addr_3_read', conv2d.cpp:24) on port 'gmem' (conv2d.cpp:24), bus read operation ('gmem_addr_4_read', conv2d.cpp:24) on port 'gmem' (conv2d.cpp:24), bus read operation ('gmem_addr_4_read_1', conv2d.cpp:24) on port 'gmem' (conv2d.cpp:24), bus read operation ('gmem_addr_4_read_2', conv2d.cpp:24) on port 'gmem' (conv2d.cpp:24), bus read operation ('gmem_addr_5_read', conv2d.cpp:24) on port 'gmem' (conv2d.cpp:24), bus read operation ('gmem_addr_5_read_1', conv2d.cpp:24) on port 'gmem' (conv2d.cpp:24), bus read operation ('gmem_addr_5_read_2', conv2d.cpp:24) on port 'gmem' (conv2d.cpp:24) accessing 'gmem' m_axi read
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 9, Depth = 61, loop 'VITIS_LOOP_15_2_VITIS_LOOP_16_3'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.021 seconds; current allocated memory: 174.641 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.178 seconds; current allocated memory: 175.660 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.263 seconds; current allocated memory: 175.984 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.095 seconds; current allocated memory: 176.309 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3' pipeline 'VITIS_LOOP_15_2_VITIS_LOOP_16_3' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_AWUSER' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3/m_axi_gmem_0_BREADY' to 0.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2d_Pipeline_VITIS_LOOP_15_2_VITIS_LOOP_16_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.335 seconds; current allocated memory: 180.082 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/input_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/weights' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/bias' to 's_axilite & ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/output_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv2d' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'input_r', 'weights', 'output_r', 'bias' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2d'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.918 seconds; current allocated memory: 185.621 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.428 seconds; current allocated memory: 190.129 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-2225] Wrote inferred directives to file C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/syn/inferred_directives.ini
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.452 seconds; current allocated memory: 195.586 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for conv2d.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv2d.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
+INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 5 seconds. Total elapsed time: 26.949 seconds; peak allocated memory: 195.637 MB.
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 35s

@@ -1,0 +1,316 @@
+---
+MainSourceFile:  'C:/Users/Admin/Desktop/Bharat_ARM_Challenge/hls_component/hls_component/hls/.autopilot/db/conv2d.pp.0.cpp'
+Diagnostics:
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_37_1:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      37
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          465169
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_37_1: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_38_2:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      38
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          465210
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_38_2: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_39_3:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      39
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          465253
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_39_3: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_43_4:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      43
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          465340
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_43_4: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_44_5:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      44
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          465393
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_44_5: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_60_6:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      60
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          465704
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_60_6: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_61_7:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      61
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          465742
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_61_7: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_62_8:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      62
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          465785
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_62_8: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_66_9:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      66
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          465884
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_66_9: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_67_10:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      67
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          465931
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_67_10: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_85_11:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      85
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          466216
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_85_11: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_86_12:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      86
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          466258
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_86_12: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_87_13:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      87
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          466301
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_87_13: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_91_14:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      91
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          466402
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_91_14: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_92_15:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      92
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          466455
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_92_15: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_93_16:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      93
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          466512
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_93_16: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_116_17:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      116
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          467044
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_116_17: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_117_18:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      117
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          467083
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_117_18: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_118_19:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      118
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          467125
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_118_19: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_122_20:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      122
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          467223
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_122_20: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_123_21:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      123
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          467270
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_123_21: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_137_22:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      137
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          467518
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_137_22: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_138_23:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      138
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          467549
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_138_23: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_139_24:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      139
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          467583
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_139_24: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_151_25:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      151
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          467725
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_151_25: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+  - DiagnosticName:  xilinx-label-all-loops
+    DiagnosticMessage:
+      Message:         'Added loop label VITIS_LOOP_155_26:  '
+      FilePath:        conv2d.cpp
+      FileOffset:      155
+      Replacements:
+        - FilePath:        'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp'
+          Offset:          467802
+          Length:          0
+          ReplacementText: 'VITIS_LOOP_155_26: '
+    Level:           Remark
+    BuildDirectory:  'C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component'
+...

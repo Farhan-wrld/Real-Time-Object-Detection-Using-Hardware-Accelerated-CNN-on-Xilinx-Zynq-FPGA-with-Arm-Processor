@@ -1,0 +1,130 @@
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15189:5: remark: Added loop label VITIS_LOOP_37_1:   [xilinx-label-all-loops]
+    for (int oc = 0; oc < 8; oc++) {
+    ^
+    VITIS_LOOP_37_1: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15189:5: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15190:9: remark: Added loop label VITIS_LOOP_38_2:   [xilinx-label-all-loops]
+        for (int i = 0; i < 26; i++) {
+        ^
+        VITIS_LOOP_38_2: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15190:9: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15191:13: remark: Added loop label VITIS_LOOP_39_3:   [xilinx-label-all-loops]
+            for (int j = 0; j < 26; j++) {
+            ^
+            VITIS_LOOP_39_3: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15191:13: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15195:17: remark: Added loop label VITIS_LOOP_43_4:   [xilinx-label-all-loops]
+                for (int ki = 0; ki < 3; ki++) {
+                ^
+                VITIS_LOOP_43_4: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15195:17: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15196:21: remark: Added loop label VITIS_LOOP_44_5:   [xilinx-label-all-loops]
+                    for (int kj = 0; kj < 3; kj++) {
+                    ^
+                    VITIS_LOOP_44_5: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15196:21: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15212:5: remark: Added loop label VITIS_LOOP_60_6:   [xilinx-label-all-loops]
+    for (int c = 0; c < 8; c++) {
+    ^
+    VITIS_LOOP_60_6: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15212:5: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15213:9: remark: Added loop label VITIS_LOOP_61_7:   [xilinx-label-all-loops]
+        for (int i = 0; i < 13; i++) {
+        ^
+        VITIS_LOOP_61_7: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15213:9: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15214:13: remark: Added loop label VITIS_LOOP_62_8:   [xilinx-label-all-loops]
+            for (int j = 0; j < 13; j++) {
+            ^
+            VITIS_LOOP_62_8: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15214:13: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15218:17: remark: Added loop label VITIS_LOOP_66_9:   [xilinx-label-all-loops]
+                for (int pi=0; pi<2; pi++)
+                ^
+                VITIS_LOOP_66_9: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15218:17: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15219:21: remark: Added loop label VITIS_LOOP_67_10:   [xilinx-label-all-loops]
+                    for (int pj=0; pj<2; pj++)
+                    ^
+                    VITIS_LOOP_67_10: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15219:21: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15237:5: remark: Added loop label VITIS_LOOP_85_11:   [xilinx-label-all-loops]
+    for (int oc = 0; oc < 16; oc++) {
+    ^
+    VITIS_LOOP_85_11: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15237:5: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15238:9: remark: Added loop label VITIS_LOOP_86_12:   [xilinx-label-all-loops]
+        for (int i = 0; i < 11; i++) {
+        ^
+        VITIS_LOOP_86_12: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15238:9: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15239:13: remark: Added loop label VITIS_LOOP_87_13:   [xilinx-label-all-loops]
+            for (int j = 0; j < 11; j++) {
+            ^
+            VITIS_LOOP_87_13: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15239:13: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15243:17: remark: Added loop label VITIS_LOOP_91_14:   [xilinx-label-all-loops]
+                for (int ic = 0; ic < 8; ic++) {
+                ^
+                VITIS_LOOP_91_14: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15243:17: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15244:21: remark: Added loop label VITIS_LOOP_92_15:   [xilinx-label-all-loops]
+                    for (int ki = 0; ki < 3; ki++) {
+                    ^
+                    VITIS_LOOP_92_15: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15244:21: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15245:25: remark: Added loop label VITIS_LOOP_93_16:   [xilinx-label-all-loops]
+                        for (int kj = 0; kj < 3; kj++) {
+                        ^
+                        VITIS_LOOP_93_16: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15245:25: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15268:5: remark: Added loop label VITIS_LOOP_116_17:   [xilinx-label-all-loops]
+    for (int c = 0; c < 16; c++) {
+    ^
+    VITIS_LOOP_116_17: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15268:5: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15269:9: remark: Added loop label VITIS_LOOP_117_18:   [xilinx-label-all-loops]
+        for (int i = 0; i < 5; i++) {
+        ^
+        VITIS_LOOP_117_18: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15269:9: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15270:13: remark: Added loop label VITIS_LOOP_118_19:   [xilinx-label-all-loops]
+            for (int j = 0; j < 5; j++) {
+            ^
+            VITIS_LOOP_118_19: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15270:13: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15274:17: remark: Added loop label VITIS_LOOP_122_20:   [xilinx-label-all-loops]
+                for (int pi=0; pi<2; pi++)
+                ^
+                VITIS_LOOP_122_20: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15274:17: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15275:21: remark: Added loop label VITIS_LOOP_123_21:   [xilinx-label-all-loops]
+                    for (int pj=0; pj<2; pj++)
+                    ^
+                    VITIS_LOOP_123_21: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15275:21: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15289:5: remark: Added loop label VITIS_LOOP_137_22:   [xilinx-label-all-loops]
+    for (int c=0;c<16;c++)
+    ^
+    VITIS_LOOP_137_22: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15289:5: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15290:9: remark: Added loop label VITIS_LOOP_138_23:   [xilinx-label-all-loops]
+        for (int i=0;i<5;i++)
+        ^
+        VITIS_LOOP_138_23: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15290:9: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15291:13: remark: Added loop label VITIS_LOOP_139_24:   [xilinx-label-all-loops]
+            for (int j=0;j<5;j++)
+            ^
+            VITIS_LOOP_139_24: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15291:13: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15303:5: remark: Added loop label VITIS_LOOP_151_25:   [xilinx-label-all-loops]
+    for (int o=0; o<10; o++) {
+    ^
+    VITIS_LOOP_151_25: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15303:5: note: FIX-IT applied suggested code changes
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15307:9: remark: Added loop label VITIS_LOOP_155_26:   [xilinx-label-all-loops]
+        for (int i=0;i<400;i++)
+        ^
+        VITIS_LOOP_155_26: 
+C:\Users\Admin\Desktop\Bharat_ARM_Challenge\hls_component\hls_component\hls\.autopilot\db\conv2d.pp.0.cpp:15307:9: note: FIX-IT applied suggested code changes

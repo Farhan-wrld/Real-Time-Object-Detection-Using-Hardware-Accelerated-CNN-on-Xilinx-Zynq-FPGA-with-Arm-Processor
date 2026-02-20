@@ -1,0 +1,22 @@
+{
+  "0": {
+    "basicblocks": 53,
+    "calls": "",
+    "control_depth": 0,
+    "def_use_depth": 5,
+    "file": "conv2d.cpp",
+    "fileloc": 3,
+    "instructions": 247,
+    "loads": {
+      "L": 7,
+      "T": 7
+    },
+    "memory_accesses": 10,
+    "name": "conv2d",
+    "stores": {
+      "L": 5,
+      "T": 1
+    },
+    "total_instructions": 247
+  }
+}

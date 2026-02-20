@@ -1,0 +1,16 @@
+INFO: [SIM 2] *************** CSIM start ***************
+   Compiling ../../../../conv2d_tb.cpp in debug mode
+   Compiling ../../../../conv2d.cpp in debug mode
+   Generating csim.exe
+-4.716503
+-6.920496
+1.416089
+0.899384
+-12.468764
+-8.900304
+-21.813833
+13.353404
+-4.345861
+-1.484802
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

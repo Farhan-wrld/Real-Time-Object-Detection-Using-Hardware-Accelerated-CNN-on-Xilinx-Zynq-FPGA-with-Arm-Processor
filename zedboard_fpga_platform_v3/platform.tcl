@@ -16,3 +16,4 @@ platform write
 platform generate -domains 
 platform active {zedboard_fpga_platform_v3}
 platform generate
+platform generate

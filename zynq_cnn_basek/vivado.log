@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Feb 20 21:54:31 2026
+# Process ID: 7356
+# Current directory: C:/MNIST_Project/zynq_cnn_basek
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23080 C:\MNIST_Project\zynq_cnn_basek\zynq_cnn_basek.xpr
+# Log file: C:/MNIST_Project/zynq_cnn_basek/vivado.log
+# Journal file: C:/MNIST_Project/zynq_cnn_basek\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/MNIST_Project/zynq_cnn_basek/zynq_cnn_basek.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Admin/Desktop/Bharat_ARM_Challenge/zynq_cnn_basek' since last save.
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionXsim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionModelSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionQuesta
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionXcelium
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionVCS
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionRiviera
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorVersionActiveHdl
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionXsim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionModelSim
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionQuesta
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionXcelium
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionVCS
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionRiviera
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimulatorGccVersionActiveHdl
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name EnableResourceEstimation
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name SimCompileState
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name UseInlineHdlIP
+CRITICAL WARNING: [Project 1-505] Unrecognized Option Name LocalIPRepoLeafDirName
+WARNING: [filemgmt 20-922] The BXML file is of a newer version (0.43) then the current supported version (0.39).
+Data could be potentially be lost
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Project 1-208] No val for DA Elab Attr
+ERROR: [Runs 36-378] The checkpoint 'C:/MNIST_Project/zynq_cnn_basek/zynq_cnn_basek.srcs/utils_1/imports/synth_1/system_wrapper.dcp' was created with 'Vivado v2025.2 (64-bit)', and cannot be opened in this version.
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 20 22:06:32 2026...
